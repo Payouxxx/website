@@ -49,6 +49,9 @@
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bxs-megaphone"></i> <span>Introduction</span></a></li>
         <li><a href="#data" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Data from Quotebank</span></a></li>
+        <li><a href="#sentimentAnalysis" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Sentiment Analysis</span></a></li>
+        <li><a href="#observationalStudy" class="nav-link scrollto"><i class="bx bx-search"></i> <span>Observational Study</span></a></li>
+        <li><a href="#sensitivityAnalysis" class="nav-link scrollto"><i class="bx bx-abacus"></i> <span>Sensitivity Analysis</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -142,7 +145,12 @@
         <div class="section-title">
           <h2>How we extracted Elon Musk quotes from Quotebank</h2>
           <p style="text-align: left;">
-            ABC
+            After downloading all the ziped datafolders from Quotebank we started the process of chunking the data from the 
+            different years into multiple files in order to save time when loading the data.
+            After finishing the chunking we ectracted all the quotes where Elon Musk was set as the speaker. 
+            Then we could combine all the data sets from the different years into one file: "all-Elon Musk-quotes.csv.bz2".
+            Out of these quotes we removed the quotes were the probability of Elon being the speaker was less than a certain threshold. 
+            Finally we used Spacy, an Natural Language Processing tool, to extract only those quotes were Elon Musk mentions a organization.
           </p>
         </div>
 
