@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/ourMark.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume - v4.7.0
@@ -46,9 +47,8 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Data from Quotebank</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bxs-megaphone"></i> <span>Introduction</span></a></li>
+        <li><a href="#data" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Data from Quotebank</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -72,12 +72,12 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= Introduction Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About</h2>
+          <h2>Introduction</h2>
           <p style="text-align: left;">
             There is no doubt that comments about companies made by important people could have impact these companies in different ways.
             It might even have an impact on the stock prices of these businesses. One of the people who have gained perhaps the most media attention
@@ -94,38 +94,29 @@
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Resource questions</h3>
+            <h3>Research questions</h3>
 
-            <ul>
-              
-              <li>How does Musk impact the financial markets?
-                <ul>
-                  <li>Does Musk's quotes impact the stock price?</li>
-                  <li>Is his negative quotes more hurtful than the gain from his positive ones?</li>
-                  <li>Does the company size play a role in the amount of change in the stock price?</li>
-                </ul>
-              </li>
-
-              <li>Does Musk's quotes affect the popularity of companies?
-                <ul>
-                  <li>Does the company size play a role?</li>
-                </ul>
-              </li>
-
-              <li>Has his impact changed in any way?
-                <ul>
-                  <li>Do his quotes have a bigger impact now than what they had in prior years?</li>
-                  <li>How has Elon’s own popularity changed?</li>
-                </ul>
-              </li>
-
-            </ul>
-
+            <div class="questions">
+              <p>
+                <b>How does Musk impact the financial markets?</b>
+                <br><span style="margin-left: 2em">Does Musk's quotes impact the stock price?
+                <br><span style="margin-left: 2em">Is his negative quotes more hurtful than the gain from his positive ones?
+                <br><span style="margin-left: 2em">Does the company size play a role in the amount of change in the stock price?
+              </p>
+              <p>
+                <b>Does Musk's quotes affect the popularity of companies?</b>
+              </p>
+              <p>
+                <b>Has his impact changed in any way?</b>
+                <br><span style="margin-left: 2em">Do his quotes have a bigger impact now than what they had in prior years?
+                <br><span style="margin-left: 2em">How has Elon’s own popularity changed?
+              </p>
+            </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Introduction Section -->
 
     <!-- ======= Quotebank Section ======= -->
     <section id="quotebank" class="about">
@@ -170,7 +161,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>NLP</h2>
+          <h2>NLP with Spacy</h2>
           <p style="text-align: left;">
             ABC
           </p>
@@ -178,7 +169,7 @@
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/spacy.svg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>XYZ</h3>
@@ -190,6 +181,30 @@
 
       </div>
     </section><!-- End NLP Section -->
+
+    <!-- ======= Most Mentioned Section Section ======= -->
+    <section id="nlp" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>THE PUBLIC LISTED COMPANIES MOST MENTIONED BY ELON</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <p class="normalText" style="font-size: calc(2208px/25);"><b>TESLA</b></p>
+            <p class="normalText" style="font-size: calc(94px/2);"><b>APPLE</b></p>
+            <p class="normalText" style="font-size: calc(64px/2);"><b>TWITTER</b></p>
+            <p class="normalText" style="font-size: calc(62px/2);"><b>FORD</b></p>
+            <p class="normalText" style="font-size: calc(20px/1.5);"><b>PAYPAL</b></p>
+          </div>
+          <div class="col-lg-6">
+            <img src="assets/img/top10plc.jpg" class="img-fluid img_display" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Most Mentioned Section -->
 
 
     <!-- ======= Facts Section ======= -->
@@ -356,20 +371,7 @@
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bx bxl-dribbble"></i>
-              </div>
-              <h4><a href="" target="_blank">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box iconbox-orange ">
               <div class="icon">
                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +384,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box iconbox-pink">
               <div class="icon">
                 <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
