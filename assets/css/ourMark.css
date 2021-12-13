@@ -7,3 +7,18 @@
 .img_display {
     width: 80%;
 }
+
+.subTitle {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+}
+
+.subTitle h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+.subTitleOfSection {
+    margin-top: -2.5em;
+    margin-bottom: 0em;
+}
