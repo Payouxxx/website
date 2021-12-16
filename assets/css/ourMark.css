@@ -1,3 +1,8 @@
+.smallerWidthDisplay {
+    width: 70%;
+    margin: auto;
+}
+
 .normalText {
     font-family: "Open Sans", sans-serif;
     color: black;
@@ -9,8 +14,8 @@
 }
 
 .subTitle {
-    margin-top: 2.5em;
-    margin-bottom: 1em;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
 }
 
 .subTitle h2 {
@@ -21,4 +26,30 @@
 .subTitleOfSection {
     margin-top: -2.5em;
     margin-bottom: 0em;
+}
+
+table, td, th {  
+    border: 1px solid #000;
+    text-align: left;
+}
+
+th {
+    background: #0563bb;
+    color: #fff;
+}
+
+table {
+    margin: auto;
+    margin-top: 1em;
+    border-collapse: collapse;
+    width: 80%;
+   
+}
+
+th, td {
+    padding: 15px;
+}
+
+#base {
+    background-color: #55eaff;
 }
