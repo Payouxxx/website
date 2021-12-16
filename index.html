@@ -351,7 +351,12 @@
         <div class="section-title">
           <h2>Sentiment analysis</h2>
           <p style="text-align: left;">
-            In order to implement a sentiment analysis we need the proper NLP tools. We decided to use NLTK Vader, which comes with a lot of tools for NLP. Exactly what we needed.
+            Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
+            We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
+            to polarity (positive/negative) and intensity (strength) of emotion. The analysis returns a sentiment score that is a 
+            value between -1 and 1, where -1 is very negative, 0 is neutral and 1 is very positive.
+            We used VADER to score Elon's quotes to whether his comments are positive or neutral or negative, 
+            which then can be used to see the effect his comments had on the stock price and the popularity of the mentioned company. 
           </p>
         </div>
 
