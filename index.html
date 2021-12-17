@@ -407,11 +407,16 @@
         <div style="margin-top: 4em">
           <h2>Regression based on sentiment analysis</h2>
           <p style="text-align: left;">
-            Here we wanted to see the effect of Musk's quotes on a company's stock price and popularity. To achieve this, 
-            we plotted the percentage change in stock price or percentage change in number of google searches (to assess popularity) 
-            against the sentiment score. We then carried out Linear Regression and used it for causal modeling ( to understand how outcome 
-            y changes with the sentiment score). The sentiment score is the only predictor for the model. We carried out this analysis using 
-            Elon's quotes on Apple, Ford, and Tesla.
+            Here we wanted to see if there is a significant effect of Musk's quotes on a company's stock price and popularity. 
+            To achieve this, we plotted the percentage change in stock price or percentage change popularity against the sentiment 
+            score. As a first analysis, for all cases, we observe that the data is dispersed and sparse. Doing a regression on this 
+            type of data is difficult because we don't know which model to use. We decided to model the change of stock price 
+            (or popularity) with a linear model with only one feature. The feature used is the score of the sentiment analysis 
+            for each quote. One can also see that when fitting this model, the R-squared of the model is very low. 
+            This implies that the regression model fits the change of stock (or popularity) very badly. 
+            This means that we cannot say that Elon quotes have an effect. We can state that the Elon quotes cannot describe 
+            the change in stock prices (or popularity). This is normal since we only used one feature. This might be not enough 
+            as there are important variables to take into account when we are talking about stock prices (or popularity). 
           </p>
         </div>
 
