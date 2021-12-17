@@ -332,7 +332,7 @@
             Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
             The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
             As we can se from the figures there was especially many Elon quotes from the year 2018.
-            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can se on the right table.
+            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
             It is this data that we will use in our further analysis of Elon's impact on the financial markets.
           </p>
         </div>
@@ -411,30 +411,31 @@
         <div>
           <div class="row">
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/Apple_stock.png" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Apple_stock.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/Apple_pop.png" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Apple_pop.png" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="row">
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/Ford_stock.png" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Ford_stock.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/ford_pop.svg" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Ford_pop.svg" class="img-fluid" alt="">
             </div>
           </div>
 
           <div class="row">
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/Tesla_stock.png" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Tesla_stock.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6">
-              <img src="assets/img/sensitivity/regression/Tesla_pop.png" class="img-fluid" alt="">
+              <img src="assets/img/sensitivity/Tesla_pop.png" class="img-fluid" alt="">
             </div>
-          </div>          
+          </div>
+                    
         </div>
 
         <div style="margin-top: 4em">
@@ -460,7 +461,7 @@
           <p style="text-align: left;">
             One way to find out whether or not Elon has an impact on the stock price of different companies is to perform an 
             observational study. In an observational study the researcher, in our case us, observe the effect of a risk factor 
-            simply by using raw data and not preform an randomized experiment.
+            simply by using raw data and not preform a randomized experiment.
             <br></br>
 
             The idea is to see if Elon's quotes has an effect on the stock price. So in order to find that out, we will observe 
@@ -499,7 +500,7 @@
 
           <br></br>
           <p style="text-align: left;">
-            <b>The following table represents the dataframe obtained:</b>
+            <b>The following table represents the dataframe obtained and standardized:</b>
           </p>
           <br>
         
@@ -580,7 +581,7 @@
             Now, we can compute the matching between the controlled and the treated companies. 
             To do so, a bipartite graph is constructed with edges between the controlled and treated companies 
             that we wish to compare, and weights equal to the similarity of these two companies. We solve the 
-            maximum bipartite matching. 
+            maximum bipartite matching to gain pairs. 
             <br><br>
             Here you can see the representation of the graph:
           </p>
@@ -693,10 +694,6 @@
             </div>
           </div>
 
-          <table>
-
-          </table>
-
           <p style="text-align: left;">
             <br><br>  
             There seem to be no p-values below 0.05 which means that we can't reject the null hypothesis. 
@@ -738,10 +735,10 @@
           </p>
 
           <br><br>
-          <h1 style="font-size: 100px">TABLE</h1>
-          <table>
-            
-          </table>
+          
+          <div class="col-lg-12">
+            <img src="assets/img/linReg.png" class="img-fluid" alt="">
+          </div>
 
           <p style="text-align: left;">
             Where x1, x2, x3,x4, x5 represent respectively the MarketCap, Popularity, Money Volume, sentiment analysis score of 
@@ -767,11 +764,10 @@
             As we expected on beforehand we did not think that his impact would be significant on larger companies, except maybe Tesla, 
             where he has an important role and therefore probably a direct impact.
             The quotes from Quotebank were mostly about larger companies and so our analysis was affected by that.
-            
+            <br><br>
             Another thing to take into consideration is that Elon Musk usually use Twitter when he outer something about different companies.
-            And as we said in the beginning Quotebank does not contain tweets. 
-            
-            However, as our analysis was...
+            And as we said in the beginning Quotebank does not contain tweets. However, as our analysis was based on the quote of quotebank
+            we did not see a major impact for larger companies.
           </p>
         </div>
 
