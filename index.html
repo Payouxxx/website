@@ -51,7 +51,6 @@
         <li><a href="#data" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Data from Quotebank</span></a></li>
         <li><a href="#sentimentAnalysis" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Sentiment Analysis</span></a></li>
         <li><a href="#observationalStudy" class="nav-link scrollto"><i class="bx bx-search"></i> <span>Observational Study</span></a></li>
-        <li><a href="#sensitivityAnalysis" class="nav-link scrollto"><i class="bx bx-abacus"></i> <span>Sensitivity Analysis</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -402,32 +401,53 @@
 
         <div class="section-title">
           <h2>Observational study</h2>
+
           <p style="text-align: left;">
-            One way to find out whether or not Elon has an impact on the stock price of different companies is to perform an observational study. 
-            In an observational study the researcher, in our case us, observe the effect of a risk factor simply by using raw data and not preform an randomized experiment.
-          </p><br>
+            One way to find out whether or not Elon has an impact on the stock price of different companies is to perform an 
+            observational study. In an observational study the researcher, in our case us, observe the effect of a risk factor 
+            simply by using raw data and not preform an randomized experiment.
+            <br></br>
+
+            The idea is to see if Elon's quotes has an effect on the stock price. So in order to find that out, we will observe 
+            the change in stock price of the company that Elon has mentioned, and compare that change to the change in stock price 
+            of other similar companies that was not mentioned by Elon. By doing this for multiple companies and at different dates 
+            we can see if it is an actual Elon Effect or not. The number of different comparisons will increase the probability of 
+            the result being true.
+            <br></br>
+
+            We used <a href="https://pypi.org/project/yfinance/" target="_blank">yfinance<a> a python library that allows you to easily 
+            get information from Yahoo finance, for the financial information in the observational study. 
+            In our case the quoted companies represent the “treated” population of the observational study. 
+            To find a control population, we first select companies that we think are similar to the quoted company 
+            which are not quoted on the same date (and quoted little in general). To perform the matching that will 
+            optimize our model, we decide to introduce covariates for each day that can be observed such as the:
+            <br></br>
+          </p>
+
+          <ul style="text-align: left;">
+            <li>Close, stock price of the company at the end of the day.</li>
+            <li>Volume, how many stock has been exchanged during the day.</li>
+            <li>MarketCap, the value of the company at the end of the day.</li>
+            <li>Popularity, represented by the number of actual search requests made to Google during this day on the company.</li>
+            <li>Money Volume which represents the product of the close and the volume.</li>
+          </ul>
+
           <p style="text-align: left;">
-            The idea is to see if Elon's quotes has an effect on the stock price.
-            So in order to find that out, we will observe the change in stock price of the company that Elon has mentioned, and compare 
-            that change to the change in stock price of other similar companies that was not mentioned by Elon.
-            By doing this for multiple companies and at different dates we can see if it is an actual Elon Effect or not.
-            The number of different comparisons will increase the probability of the result being true.
-            
+            These values are obtained through yahoo finance and google. We also add columns not depending on time: 
             <br></br>
-            In order to perform our observational study, we first need a way to get the financial information of the companies. 
-            We used <a href="https://pypi.org/project/yfinance/" target="_blank">yfinance<a> a python library that allows you to easily get information from Yahoo finance. 
+          </p>
 
-            <br><br><br><br><br>
-            4 companies compare to one company
-            Name, Date, Close, Volume, MarketCap, Popularity, Elon, compare, 
-            <br></br>
-            We used this data to calculate the propensity score in order to match the quoted company at a given day to the most similar company at that date.
+          <ul style="text-align: left;">
+            <li>Elon: takes value 1 or 0 to indicate if Elon Musk talk about the company.</li>
+            <li>Compare: for the controlled companies, it takes the name of the company we want to compare it with. And for the treated ones, take 'None' as value.</li>
+          </ul>          
 
-            <br></br>
-            The table below shows you what kind of features we used to compare the different companies as well as the result of the propensity scored.
-
-             </p>
-
+          <br></br>
+          <p style="text-align: left;">
+            <b>The following table represents the dataframe obtained:</b>
+          </p>
+          <br>
+        
           <div>
             <table>
               <tr>
@@ -498,25 +518,37 @@
               </tr>
             </table>
           </div>
-          
+
+          <br></br>
+          <p style="text-align: left;">
+            Thanks to these covariates, the propensity score is computed for each company at each given day. 
+            Now, we can compute the matching between the controlled and the treated companies. 
+            To do so, a bipartite graph is constructed with edges between the controlled and treated companies 
+            that we wish to compare, and weights equal to the similarity of these two companies. We solve the 
+            maximum bipartite matching.  The matching is then obtained and we can now go to the next step which 
+            consists of comparing the change of the stock of the treated vs control.
+            <br><br><br><br><br>
+
+            4 companies compare to one company
+            Name, Date, Close, Volume, MarketCap, Popularity, Elon, compare, 
+            <br></br>
+            We used this data to calculate the propensity score in order to match the quoted company at a given day to the most similar company at that date.
+
+            <br></br>
+            The table below shows you what kind of features we used to compare the different companies as well as the result of the propensity scored.
+          </p>
+
+
+          <div class="row" style="margin-top: 2em;">
+            <div class="col-lg-12">
+              <img src="assets/img/observationalApple.svg" class="img-fluid" alt="">
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section><!-- End Observational study Section -->
-
-    <!-- ======= Sensitivity Analysis Section ======= -->
-    <section id="sensitivityAnalysis" class="about smallerWidthDisplay">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Sensitivity Analysis</h2>
-          <p style="text-align: left;">
-            In our example we would use the sensitivity analysis to find out the effect Elon has on the financial market.
-          </p>
-        </div>
-
-      </div>
-    </section><!-- End Sensitivity Analysis Section -->
 
     <!-- ======= Impact regression Section ======= -->
     <section id="impactRegression" class="about smallerWidthDisplay">
@@ -578,6 +610,10 @@
           <p style="text-align: left;">
             As we briefly mentioned earlier, we were unfortunately not able to look at if Musk have a bigger impact on smaller companies compared to 
             big companies, so called large cap companies, due to the fact that Quotebank did not contain quotes where smaller companies was mentioned.
+          </p>
+          <br>
+          <p style="text-align: left;">
+            We could also have used sensitivity analysis if the propensity score were more similar.
           </p>
         </div>
 
