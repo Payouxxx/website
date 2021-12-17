@@ -378,7 +378,7 @@
           not have that big of an impact on larger companies such as Apple in this case.
         </p>
 
-        <div class="row" style="margin-top: 2em;">
+        <div class="row" style="margin-top: -1em;">
           <div class="col-lg-1"></div>
           <div class="col-lg-10">
             <img src="assets/img/ggletrend_quote1.svg" class="img-fluid" alt="">
@@ -396,7 +396,7 @@
           This might tell us that Elon does not have that big of an impact on the stock price of large cap companies.
         </p>
 
-        <div class="row" style="margin-top: 2em;">
+        <div class="row" style="margin-top: -2em;">
           <div class="col-lg-1"></div>
           <div class="col-lg-10">
             <img src="assets/img/yfinance_quote1.svg" class="img-fluid" alt="">
@@ -426,6 +426,10 @@
 
         <div class="section-title">
           <h2>Observational study</h2>
+        </div>
+
+        <div>
+          <h2>Matching</h2>
 
           <p style="text-align: left;">
             One way to find out whether or not Elon has an impact on the stock price of different companies is to perform an 
@@ -555,6 +559,46 @@
             <br><br>
           </p>
 
+        </div>
+
+
+        <div style="margin-top: 1em;">
+          <h2>Tests on observational study</h2>
+          <p style="text-align: left;">
+            To do the observational study we had to be careful about a couple of more things. 
+            For example the financial data was sometimes listed in other currencies than USD. 
+            The most prominent is Samsung in Korean Won which is about 1000x of USD. We then had to 
+            convert all monetary features of these types of companies to USD.
+            <br><br>
+
+            This was done manually for the few companies in question, and by taking an estimated average of the 
+            exchange rate over the time period for our data.
+            <br><br>
+
+            We then redid the propensity score for this part and got the coefficients as follows:
+            <br><br>
+
+            <b>Intercept</b> <span id="tab">-0.7439</span><br>
+            <b>Money volume</b> <span id="tab">7.6827</span><br>
+            <b>MarketCap</b> <span id="tab">-1.9234</span><br>
+            <b>Popularity</b> <span id="tab">0.6049</span><br>
+            
+            <br><br>
+            Based on the outputted propensity scores we did the matching for each local group of stocks.
+
+            <br><br>
+            The next part was modeling the stock price change. We loaded in all the stock data for the companies 
+            we have in our model and looked at the 5 consecutive days after a quote for the matched company and the 
+            analysed company. Sometimes a quote will be during a weekend or the following span will include days 
+            without stock history, then our model will automatically just take the days that have stock history. 
+            We then use the stock prices to calculate the daily change (previous day price/next day price).
+            
+            <br><br>
+            By comparing the distributions between a matched and control stock we can test if they have a similar distribution. 
+            We used a Mann-Whitley u test for the distributions. The null-hypothesis is that the distributions are the same. 
+            Here you can see the daily change for the control and 'treated' companies where the x axis is the dates in 
+            chronological order, but not to scale:
+          </p>
 
           <div class="row" style="margin-top: 2em;">
             <div class="col-lg-12">
@@ -562,6 +606,23 @@
             </div>
           </div>
 
+          <p style="text-align: left;">
+            <br><br>  
+            Here are the results for the Mann Whitley U tests:
+          </p>
+
+          <table>
+
+          </table>
+
+          <p style="text-align: left;">
+            <br><br>  
+            There seem to be no p-values below 0.05 which means that we can't reject the null hypothesis. 
+            The stock price changes seem to come from the same/very similar distributions.
+          </p>
+
+          
+          
         </div>
 
       </div>
