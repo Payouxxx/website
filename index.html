@@ -51,6 +51,8 @@
         <li><a href="#data" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Data from Quotebank</span></a></li>
         <li><a href="#sentimentAnalysis" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Sentiment Analysis</span></a></li>
         <li><a href="#observationalStudy" class="nav-link scrollto"><i class="bx bx-search"></i> <span>Observational Study</span></a></li>
+        <li><a href="#impactRegression" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Impact regression</span></a></li>
+        <li><a href="#conclusion" class="nav-link scrollto"><i class="bx bx-bulb"></i> <span>Conclusion</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -599,12 +601,15 @@
             By comparing the distributions between a matched and control stock we can test if they have a similar distribution. 
             We used a Mann-Whitley u test for the distributions. The null-hypothesis is that the distributions are the same. 
             Here you can see the daily change for the control and 'treated' companies where the x axis is the dates in 
-            chronological order, but not to scale:
+            chronological order, but not to scale as well as the results for the Mann Whitley U tests:
           </p>
 
           <div class="row" style="margin-top: 2em;">
             <h3>Apple</h3>
-            <p><b>P-value</b> <span id="tab">X</span></p>
+            <p><b>P-value (IBM)</b> <span id="tab">0.7818969961187895</span></p>
+            <p><b>P-value (Samsung)</b> <span id="tab">0.07267412867689323</span></p>
+            <p><b>P-value (Lenovo)</b> <span id="tab">0.20719648581932448</span></p>
+            <p><b>P-value (Microsoft)</b> <span id="tab">0.9309874465595671</span></p>
             <div class="col-lg-12">
               <img src="assets/img/observationalApple.svg" class="img-fluid" alt="">
             </div>
@@ -612,7 +617,13 @@
 
           <div class="row" style="margin-top: 2em;">
             <h3>Ford</h3>
-            <p><b>P-value</b> <span id="tab">X</span></p>
+            <p><b>P-value (Renault)</b> <span id="tab">0.037136256414410235</span></p>
+            <p><b>P-value (General Motors)</b> <span id="tab">0.5285921958576796</span></p>
+            <br><br><br>
+            <p>
+              There is two empty figures because Toyota and Stellantis was not matched with ford. 
+              This might have been due to a large market cap and low trading volume.
+            </p>            
             <div class="col-lg-12">
               <img src="assets/img/observationalFord.svg" class="img-fluid" alt="">
             </div>
@@ -620,7 +631,10 @@
 
           <div class="row" style="margin-top: 2em;">
             <h3>PayPal</h3>
-            <p><b>P-value</b> <span id="tab">X</span></p>
+            <p><b>P-value (Western Union)</b> <span id="tab">0.26275304114766074</span></p>
+            <p><b>P-value (Euronet)</b> <span id="tab">0.48073111045562256</span></p>
+            <p><b>P-value (American Express)</b> <span id="tab">0.9009714934164412</span></p>
+            <p><b>P-value (Visa)</b> <span id="tab">0.534965034965035</span></p>
             <div class="col-lg-12">
               <img src="assets/img/observationalPayPal.svg" class="img-fluid" alt="">
             </div>
@@ -628,7 +642,10 @@
 
           <div class="row" style="margin-top: 2em;">
             <h3>Tesla</h3>
-            <p><b>P-value</b> <span id="tab">X</span></p>
+            <p><b>P-value (Daimler)</b> <span id="tab">0.22820421433941152</span></p>
+            <p><b>P-value (BMW)</b> <span id="tab">0.01735656673757902</span></p>
+            <p><b>P-value (Volkswagen)</b> <span id="tab">0.46236044154701805</span></p>
+            <p><b>P-value (General Motors)</b> <span id="tab">0.907735912135226</span></p>
             <div class="col-lg-12">
               <img src="assets/img/observationalTesla.svg" class="img-fluid" alt="">
             </div>
@@ -636,16 +653,14 @@
 
           <div class="row" style="margin-top: 2em;">
             <h3>Twitter</h3>
-            <p><b>P-value</b> <span id="tab">X</span></p>
+            <p><b>P-value (Google)</b> <span id="tab">0.48484848484848486</span></p>
+            <p><b>P-value (Facebook)</b> <span id="tab">0.5468909935184665</span></p>
+            <p><b>P-value (Snapchat)</b> <span id="tab">0.19477620553450214</span></p>
+            <p><b>P-value (Pinterest)</b> <span id="tab">0.1681531290926782</span></p>
             <div class="col-lg-12">
               <img src="assets/img/observationalTwitter.svg" class="img-fluid" alt="">
             </div>
           </div>
-
-          <p style="text-align: left;">
-            <br><br>  
-            Here are the results for the Mann Whitley U tests:
-          </p>
 
           <table>
 
@@ -671,10 +686,39 @@
         <div class="section-title">
           <h2>Impact regression</h2>
           <p style="text-align: left;">
-            ABC
-          </p>
-        </div>
+            The aim of this part is to perform a linear regression on the change of stock to . Indeed, a simple linear regression was 
+            calculated to describe the change of stock at a given day based on the market cap, the money volume, whether or not 
+            Elon Musk has talked about the company, and especially the sentiment analysis of the quote.  
+            We want to investigate the degree to which the variable sentiment score predicts the change of stock price.
+            <br><br>
 
+            To do so, we continue to use the data frame of the observational study but we need to make some modifications. 
+            In the beginning, we add a column of sentiment score for each quote, and for the companies not quoted we set the score to 0. 
+            Afterward, we noticed that there are many quotes on the same day, some of them are different quotes and some of them are the 
+            same as the first one. In this case, we add as many different quotes that occur on the same day. 
+            Therefore, on the same day, it can happen that there are different rows of the same company with different sentiment scores.
+            <br><br>
+
+            We also add a column that describes the change of the stock: we take the mean of the change stock during 
+            the three days following the date.
+            <br><br>
+
+            Now that all the data is gathered the linear regression can be performed:
+          </p>
+
+          <table>
+
+          </table>
+
+          <p style="text-align: left;">
+            Where x1, x2, x3,x4, x5 represent respectively the MarketCap, Popularity, Money Volume, sentiment analysis score of 
+            the quote, and whether Elon talked about the company.  The method used here is Ordinary Least Squares (OLS), the most 
+            common one.  As you can see the estimation of the coefficients of the sentiment score and the Elon variable are very 
+            low. The coefficients represent the rate of change of the stock price with respect to the variables. 
+            This means Elon quotes still don't have an impact on the change of stock price, even when we expanded the model. 
+          </p>
+
+        </div>
       </div>
     </section><!-- End Impact regression Section -->
 
