@@ -1,4 +1,4 @@
-# project-madagascar-data-story
-Data story for our ADA project madagascar
+# projet-datalcoholic
+Data story for our ADA project Datalcoholic
 
-https://lobsterchampagne.github.io/project-madagascar-data-story/
+https://Payouxxx.github.io/website/
