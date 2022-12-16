@@ -136,7 +136,7 @@
   }
 
   /**
-   * Hero type effect
+   * Beer type effect
    */
   const typed = select('.typed')
   if (typed) {
