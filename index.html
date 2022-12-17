@@ -194,14 +194,7 @@
         <div>
           <h2>Meaningful data from Quotebank</h2>
           <p style="text-align: left;">
-            We were presented with a number of different zipped files containing all of the quotes in quotebank from the year 
-            2015 to the beginning of 2020.
-            After downloading all the zipped datafolders from Quotebank we started the process of chunking the data from the 
-            different years into multiple files in order to save time when loading in the data.
-            After finishing the chunking we extracted all the quotes where Elon Musk was set as the speaker. 
-            Then we could combine all the data sets from the different years into one single file: "all-Elon Musk-quotes.csv.bz2".
-            Out of these quotes we removed the quotes where the probability of Elon being the speaker was less than a certain threshold. 
-            Finally we used Spacy, a Natural Language Processing tool, to extract the quotes where Elon Musk mentioned an organization.
+            Taking a look in the datasets we observe that there is a total of 5788 breweries  
           </p>
         </div>
 
@@ -363,7 +356,10 @@
           <h2>Sentiment analysis</h2>
           <p style="text-align: left;">
             Sentiment analysis is a method using Natural Language Processing, text analysis and other algorithms to identify, extract, quantify and 
-            study 
+            study the polarity of subjective information in a given text (e.g. a positive or negative opinion). Performing a Sentiment analysis 
+            on beer reviews will allow us to see if the reviews tend to be positive or negative. We will use the VADER model, which is
+            sensitive to polarity (positive/negative) and intensity (strength) of emotion. After running this model we append a values between -1 and 1 to each quote. 
+            Where negative values imply a negative sentiment and vice versa
             <!-- Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
             We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
             to polarity (positive/negative) and intensity (strength) of emotion. The analysis returns a sentiment score that is a 
@@ -380,8 +376,8 @@
         </div>
         
         <p style="margin-top: 1em;">
-          This particular quote had a sentiment score of: <b>-0.7003</b>. 
-          This is expected as he mentions Apple negatively in this particular quote. 
+          This particular review had a sentiment score of: <b>-0.7003</b>. 
+          <!--This is expected as he mentions Apple negatively in this particular quote. 
           So now let us take a closer look at how Apple's popularity changed after this quote. 
           The black vertical line displays the date of the Elon quote. From the figure below, 
           which uses Google trends, one can think that Elon's quote did not affect the popularity of 
@@ -389,7 +385,7 @@
           the graph for iPhone as a comparison to the Apple graph to make sure the Apple trend is related to 
           the technology company and not the fruit. As you can see, there is a minimal increase. 
           This might actually tell us that Elon does not have that big of an impact on 
-          Apple and we believe that this can be generalized to larger companies as well.
+          Apple and we believe that this can be generalized to larger companies as well. -->
         </p>
 
         <div class="row" style="margin-top: -1em;">
