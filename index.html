@@ -105,21 +105,22 @@
             worldwide reviews site that we will introduce you in the next section. 
             <br></br>
 
-            <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 2em;">
-              <div style="width: 40%;">
-                <img src="assets/img/intro/tweet2.jpg" class="img-fluid" alt="">
+            <div style="display: flex; margin: auto; width: 85%; margin-bottom: 2em; margin-top: 2em;">
+              <div style="width: 60%;height:60% ;margin-top: 6em;">
+                <img src="figures/states.jpg" class="img-fluid" alt="">
               </div>
-              <div style="width: 60%; text-align: left; margin-left: 2em;">
+              <div style="width: 80%; text-align: left; margin-left: 1em;">
                 <h3>Reviews in the States</h3>
-                Recently, in novemeber, Elon Musk created a poll on his Twitter where he asked his followers 
-                wheter or not he should sell a portion (10%) of his shares in Tesla in order to pay tax, as a response to a "billionaires tax".
-                Musk told that he would abide the poll no matter the outcome. 
-                Shortly after this tweet was posted the 
-                <a href="https://www.bbc.com/news/business-59209942" target="_blank">Tesla stock price fell by 4.9%.</a> 
-                However, this is not the only time where Elon and his statements have directly affected a financial asset.
+                BeerAdvocate and RateBeer provide valuable insights into the world of beer reviews. 
+                The datasets contain data on beer ratings, reviews, and other information about beer from users of the sites. 
+                This includes information about the type of beer, its style, its region of origin, its ABV, and its ratings from users. 
+                Additionally, the datasets also contain information about the user who wrote the review, such as their location, age, and gender.
+                The will alow us to analyse how beer reviews influence the perception of a beer. For example, a comparison of ratings and reviews of a particular beer can be used to determine whether users in different regions have different opinions about the same beer.
+                Additionally, the datasets can be used to examine how factors such as age, gender, and location affect user opinion.
+                Information can be drawn to determine the different types of beers that are popular in different regions. 
               </div>
             </div>
-
+<!---->
             <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
               
               <div style="width: 60%; text-align: right; margin-right: 2em;">
@@ -192,7 +193,7 @@
         </div>
 
         <div>
-          <h2>Meaningful data from Quotebank</h2>
+          <h2>Meaningful data from BeerAdvocate and RateBeer</h2>
           <p style="text-align: left;">
             Taking a look in the datasets we observe that there is a total of 5788 breweries. However they do not seem to be the largest ones in the US.
             The largest brewery in the US is <a href="https://www.brewersassociation.org/statistics/breweries/" target="_blank">Anheuser-Busch InBev</a> for instance and  
@@ -208,7 +209,7 @@
           </div>
         </div>
       </div>
-    </section><!-- End Quotebank Section -->
+    </section><!-- End Dataset Section -->
 
     <!-- ======= Facts Section ======= -->
     <section id="data" class="facts">
@@ -309,35 +310,49 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>THE PUBLIC LISTED COMPANIES MOST MENTIONED BY ELON</h2>
+          <h2>THE MOST REVIEWED BREWERIES IN THE STATES</h2>
         </div>
 
         <div class="row">
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="normalText" style="font-size: calc(2208px/25);"><b>TESLA</b></p>
-            <p class="normalText" style="font-size: calc(94px/2);"><b>APPLE</b></p>
-            <p class="normalText" style="font-size: calc(64px/2);"><b>TWITTER</b></p>
-            <p class="normalText" style="font-size: calc(62px/2);"><b>FORD</b></p>
-            <p class="normalText" style="font-size: calc(20px/1.5);"><b>PAYPAL</b></p>
+            <p class="normalText" style="font-size: calc(114px/2);"><b>Boston Beer company</b></p>
+            <p class="normalText" style="font-size: calc(94px/2);"><b>Rogue Ales</b></p>
+            <p class="normalText" style="font-size: calc(64px/2);"><b>Founders Brewing Company</b></p>
+            <p class="normalText" style="font-size: calc(62px/2);"><b>Sierra Nevada Brewing Co.</b></p>
+            <p class="normalText" style="font-size: calc(20px/1.5);"><b>Victory Brewing Company - Downingtown</b></p>
           </div>
           <div class="col-lg-6">
             <!-- include a reference to the html in the main html file -->
-            <script src="breweries_reviews.html"></script>
+            <iframe width="450" height="615"src="figures/breweries_reviews.html"></iframe>
            <!-- <img src="assets/img/top10plc.svg" class="img-fluid img_display" alt="">-->
           </div>
         </div>
 
         <div class="subTitle">
-          <h2>Some more data about Elon's quotes</h2>
+          <h2>Some more data about RateBeer and BeerAdvocate</h2>
         </div>
-
+        <div class="subsubTitle">
+          <h3>BeerAdvocate</h3>
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">
+            <iframe width="500" height="415"src="figures/states_reviews_users_BA.html"></iframe>
+            <!--<img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">-->
           </div>
           <div class="col-lg-6">
-            <img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">
+            <iframe width="500" height="415"src="figures/states_reviews_beers_BA.html"></iframe>
+            <!--<img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">-->
           </div>
+        <div class="subsubTitle">
+          <h3>RateBeer</h3>
+          <div class="row">
+            <div class="col-lg-6">
+              <iframe width="500" height="415"src="figures/states_reviews_users_RB.html"></iframe>
+              <!--<img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">-->
+            </div>
+            <div class="col-lg-6">
+              <iframe width="500" height="415"src="figures/states_reviews_beers_RB.html"></iframe>
+              <!--<img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">-->
+            </div>
         </div>
 
         <div class="section-title" style="margin-top: 2em;">
@@ -362,9 +377,10 @@
           <p style="text-align: left;">
             Sentiment analysis is a method using Natural Language Processing, text analysis and other algorithms to identify, extract, quantify and 
             study the polarity of subjective information in a given text (e.g. a positive or negative opinion). Performing a Sentiment analysis 
-            on beer reviews will allow us to see if the reviews tend to be positive or negative. We will use the VADER model, which is
-            sensitive to polarity (positive/negative) and intensity (strength) of emotion. After running this model we append a values between -1 and 1 to each quote. 
-            Where negative values imply a negative sentiment and vice versa
+            on beer reviews will allow us to see if the reviews tend to be positive or negative. We will use the TextBlob library that uses a natural language toolkit (NLTK). 
+            It uses NLTK because it is simple, easy to deploy, will use up fewer resources, gives dependency parsing, and can be used even for small applications.
+            When a sentence is passed into Textblob it gives two outputs, which are polarity and subjectivity. Polarity is the output that lies between [-1,1], where -1 refers to 
+            negative sentiment and +1 refers to positive sentiment. Subjectivity is the output that lies within [0,1] and refers to personal opinions and judgments.
             <!-- Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
             We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
             to polarity (positive/negative) and intensity (strength) of emotion. The analysis returns a sentiment score that is a 
