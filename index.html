@@ -537,6 +537,26 @@
             </div>
             We see that the two strong beer styles have better grades compared to the two beer styles with a lighter taste. We also see, from the correlation matrices, 
             that the results from our previous correlation matrix are quite similar : taste the most important and appearance the least. Taste tends to be slightly more important for the two lighter beer styles.
+            <br></br>
+            One more analysis on these four beer styles is plotting the number of reviews and the mean rating of these styles. With the first map, 
+            we can see where the reviews for each beer style come from and with the second, the average rating users in the state give to these beer styles. 
+            We could interpret these maps in different ways but there doesn’t seem to be any reliable information we could take out from these maps. 
+            Our initial objective was to investigate a potential link between the reviews and political tendencies of the reviewers. Even if these maps don’t point out something about 
+            a possible link between politics and beer reviews, we will branch out a bit further and see if we find anything interesting.
+            <div class="row" style="margin-top: 0em;">
+              <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                  <iframe width="800" height= "500" src="figures/US_map_1.html"></iframe>
+                </div>
+              </div>
+            </div>  
+            <div class="row" style="margin-top: 0em;">
+              <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                  <iframe width="800" height= "500" src="figures/US_map_2.html"></iframe>
+                </div>
+              </div>
+            </div>  
           </p>
         </div>
       </div>
@@ -549,39 +569,28 @@
 
         <div class="section-title">
           <h2>Political Tendencies</h2>
-          <p style="text-align: left;">          
-            In order to study the links between the political tendencies of each state and the reviews made by users from the same states,
-            we first need to gather the political results of each state. We found a dataset on Kaggle that contains the political
-            To do so, we continue to use the data frame of the observational study but we need to make some modifications. 
-            In the beginning, we add a column of sentiment score for each quote, and for the companies not quoted we set the 
-            score to 0. Afterward, we noticed that there are many quotes on the same day, some of them are different quotes and 
-            some of them are the same as the first one. In this case, we add all the different quotes that occur on the same day. 
-            Therefore, on the same day, it can happen that there are different rows of the same company with different sentiment 
-            scores.
+          <p style="text-align: left;">     
+            Here, we try to discover if there is a pattern in the reviews of beers based on the political tendencies of the American reviewers. 
+            We use our dataset containing statistics of presidential elections in the US during the period from 2000 to 2017, we have the data of the number of votes for each candidate in each state. 
+            More precisely we only use the statistics from Democratic and Democratic% parties because they are more than 95% of the votes in each states for each election. 
+            Than we want to see if there is a pattern in preferring local beers (brewed in the same state as the reviewer/in the US) to foreign beers (another state of the US/another country).
+            We used the dataset scrapped from wikipedia about statistics in presidential elections of 2000 to 2016. 
             <br><br>
-
-            We also add a column that describes the change of the stock: we take the mean of the change of the stock during 
-            the three days following the day of the quote.
+            We obviously don't have direct access to the political inclination of the reviewers, but we know the percentage of population that voted for one candidat 
+            or the other for each election. We can use this information to estimate political inclination of the reviewers based on their geographical location. 
+            If there is a pattern in the preference of local beers we shouls be able to see it in the states where there is a higher percentage of votes for one party or the other. 
+            We first need to know the percentages of votes for each party in each states. 
+            <br></br>
+            We find 6 states where the mean percentage of votes over the 5 elections for the Republican party is higher than 60%: Wyoming, Idaho, Oklahoma, Utah, Alabama and Nebraska.
+            There is almost no reviews for beers brewed in these states so we cannot make an analysis at this level of locality. However the numbers are quite balances when we compare reviews 
+            from those states of beers brewed in the US and beers brewed in the rest of the world.
             <br><br>
-
+            We already removed the unique review of Washington DC during the pre-processings part. We still find 5 states where the mean percentage of votes over the 5 elections for the Democratic party 
+            is Higher than 60% : Hawaii, Massachusetts, New-York, Rhode Island and Vermont. Now we will try to find if there is a pattern in the reviews of beers based on the political tendencies of the American reviewers. 
+            For this we can simply separate the reviews in 2 Dataframes for each party : one with the reviews of local beers and one with the reviews of foreign beers. We then perform linear regression 
+            to see if there is a correlation on the rating of local vs foreign beers and the political tendency of the reviewers.
             Now that all the data is gathered the linear regression can be performed:
           </p>
-<!-- 
-          <br><br>
-          
-          <div class="col-lg-12">
-            <img src="assets/img/linReg.png" class="img-fluid" alt="">
-          </div> 
-
-          <p style="text-align: left;">
-            <br><br>
-            Where x1, x2, x3,x4, x5 represent respectively the MarketCap, Popularity, Money Volume, sentiment analysis score of 
-            the quote, and whether Elon talked about the company. The method used here is Ordinary Least Squares (OLS). 
-            As you can see the estimation of the coefficients of the sentiment score and the Elon variable are very 
-            low. The coefficients represent the rate of change of the stock price with respect to the variables. 
-            This means Elon quotes still don't have an impact on the change of stock price, even when we expanded the model. 
-          </p>
--->
         </div>
       </div>
     </section><!-- End Political Tendencies Section -->
