@@ -28,6 +28,9 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/ourMark.css" rel="stylesheet">
 
+  <!-- Library -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  	
   <!-- =======================================================
   * Template Name: MyResume - v4.7.0
   * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
@@ -63,7 +66,7 @@
   <section id="Beer" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>The taste test : Do local beer come out on Top ?</h1>
-      <p>Do Americans <span class="typed" data-typed-items="give better grades to local beers?, political tendecies impact beer consumption?,prefer local?"></span></p>
+      <p>Do Americans <span class="typed" data-typed-items="give better grades to local beers?, political tendencies impact beer reviews?,prefer local?"></span></p>
       <p>
           <small class="ml-3"><b>By:</b></small>
           <small class="ml-3">Thibaut Stoltz,</small>
@@ -92,35 +95,28 @@
           <p style="text-align: left;">
             Did you know that former President Barack Obama was the first president ever to brew a beer in the White House ? 
             Beer is deeply ingrained in American culture, the US are ranked 15th in beer consumption per capita.
-            With the booming craft beer industry, there are now hundreds of local breweries throughout the country producing interesting, unique and flavorful beers. 
+            With the booming craft beer industry, there are now tens of thousands of local breweries throughout the country producing interesting, unique and flavorful beers. 
             With beer reviews, you can learn about the history and backstory of each brewery, as well as the various beers they offer and their flavor profiles. 
             By reading reviews, you can discover which beers are best suited to your particular tastes and which local breweries are worth a visit.
-            <!--As <a href="https://www.bloomberg.com/billionaires/" target="_blank">the richest man in the world</a> and recent winner of the Times price 
-            <a href="https://time.com/person-of-the-year-2021-elon-musk/" target="_blank">2021 Person of the year</a>. There is no doubt that he is one of the most 
-            influential people in the world, if not the most influential.-->
             <br></br>
-
             There is reason to believe that investigating beer reviews will allow us to understand if American people are more likely to give better grades to local beers. 
-            We will also investigate if political tendecies impact beer liking and if people prefer local beers. Our analysis will rely on almost 10 million reviews from 
+            We will also investigate if political tendecies impact beer liking. Our analysis will rely on almost 10 million reviews from 
             worldwide reviews site that we will introduce you in the next section. 
             <br></br>
 
             <div style="display: flex; margin: auto; width: 85%; margin-bottom: 2em; margin-top: 2em;">
-              <div style="width: 60%;height:60% ;margin-top: 6em;">
+              <div style="width: 60%;height:60% ;margin-top: 1em;">
                 <img src="figures/states.jpg" class="img-fluid" alt="">
               </div>
               <div style="width: 80%; text-align: left; margin-left: 1em;">
                 <h3>Reviews in the States</h3>
-                BeerAdvocate and RateBeer provide valuable insights into the world of beer reviews. 
-                The datasets contain data on beer ratings, reviews, and other information about beer from users of the sites. 
-                This includes information about the type of beer, its style, its region of origin, its ABV, and its ratings from users. 
-                Additionally, the datasets also contain information about the user who wrote the review, such as their location, age, and gender.
-                The will alow us to analyse how beer reviews influence the perception of a beer. For example, a comparison of ratings and reviews of a particular beer can be used to determine whether users in different regions have different opinions about the same beer.
-                Additionally, the datasets can be used to examine how factors such as age, gender, and location affect user opinion.
-                Information can be drawn to determine the different types of beers that are popular in different regions. 
+                Taking a closer look to the dataset we observe that there is a total of 5 277 breweries. However they do not seem to be the largest ones in the US.
+                The largest brewery in the US is <a href="https://www.brewersassociation.org/statistics/breweries/" target="_blank">Anheuser-Busch InBev</a> for instance and  
+                we observe that only <b>1.73%</b> of the reviews are made from beers coming out of their breweries. It seems that the dataset gathers more reviews about the craft brew beers 
+                and won’t necessarily be representative of all beer drinkers. It's always important to know the bias you are working with. 
               </div>
             </div>
-<!---->
+
             <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
               
               <div style="width: 60%; text-align: right; margin-right: 2em;">
@@ -177,29 +173,38 @@
         <div class="section-title">
           <h2>Where do the reviews come from?</h2>
           <p style="text-align: left;">
-            To understand better the data we are working with, we will first introduce you to the data sources. The reviews we are working with are 
-            from two different websites : <a href="https://www.beeradvocate.com/" target="_blank">Beer Advocate</a> and 
-            <a href="https://www.ratebeer.com/" target="_blank">Rate Beer</a>.
-            <br></br>. These two websites are the two biggest beer review websites in the world. 
-            <!--In order for you to understand and hang along in this data story we first want to let you now where we have gotten our data from
-            and how we abstracted the relevant data. So let us introduce you to Quotebank.
-            Quotebank is an open corpus of more than 178 million quotations 
-            attributed to the speakers that uttered them. The quotes are extracted from 162
-            million English news articles that were published between 2008 and 2020.
-            In this project we are focusing on the data between 2015 to the beginning of 2020. 
-            In this particular data story we are insterested in the quotes that was attributed to Elon Musk.
-            So we extracted these quotes in order for us to do the analysis. Let us briefly go through what we did in order to achieve this.-->
-          </p>
+            To understand better the data we are working with, we will first introduce you to the data sources. The reviews come from two different 
+            websites : <a href="https://www.beeradvocate.com/" target="_blank">Beer Advocate</a> and 
+            <a href="https://www.ratebeer.com/" target="_blank">Rate Beer</a> which are the two biggest beer review websites in the world. 
+            <br></br> 
+            BeerAdvocate and RateBeer provide valuable insights into the world of beer reviews. 
+            The datasets contain data on beer ratings, reviews, and other information about beer from users of the sites. 
+            This includes information about the type of beer, its style, its region of origin, its ABV, and its ratings from users. 
+            Additionally, the datasets also contain information about the user who wrote the review, such as their location, age, and gender.
+            The will alow us to analyse how beer reviews influence the perception of a beer. For example, a comparison of ratings and reviews of a particular beer can be used to determine whether users in different regions have different opinions about the same beer.
+            Additionally, the datasets can be used to examine how factors such as age, gender, and location affect user opinion.
+            Information can be drawn to determine the different types of beers popular in different regions. 
+              
+            </p>
         </div>
-
-        <div>
-          <h2>Meaningful data from BeerAdvocate and RateBeer</h2>
-          <p style="text-align: left;">
-            Taking a look in the datasets we observe that there is a total of 5788 breweries. However they do not seem to be the largest ones in the US.
-            The largest brewery in the US is <a href="https://www.brewersassociation.org/statistics/breweries/" target="_blank">Anheuser-Busch InBev</a> for instance and  
-            we observe that 19586 reviews are made from beers coming out of their breweries on the Beer Advocate site and no. It seems that the Beer Advocate dataset gathers more reviews about the craft brew beers 
-            and won’t necessarily be representative of all beer drinkers. It's always important to know the bias you are working with. 
-          </p>
+        <div style="text-align: left;margin-bottom: 1em;"> 
+          <h3>Pre-processing</h3>
+          For both datasets, we added two columns that corresponds to the country of the user and the country of the brewery. The geographical information contain the name of the country for users and breweries. 
+          However, for the US based locations, we also have the name of the state. We want to extract this information and add it to the dataframe. To do so we create an extra column for both breweries and users 
+          that will contain the US postal abbreviations for each state. We then finished processing the locations by dropping the state name in the location column. By quickly giving a look at the repartition
+          of the users location. Some US territories have 1 review each. We therefore removed them from the dataframe since they will not be useful for our analysis.
+          We end up with 2 dataframes named <code>BA_US</code> and <code>RB_US</code>. 
+          We also converted the <b rating></b> column to a <code>datetime object</code>.
+          <br></br> 
+          After our processing, we wanted to know the proportion of <code>NaN</code> values for the <b rating></b> and <b text></b> columns in the dataframes.
+          If we look at how much these <code>NaN</code> values are represented in the dataframes, we can see that for <code>RB_US</code> the <code>NaN</code> 
+          values represent 0.005% of the data and for <code>BA_US</code> they represent 0.6% of the data. Thus we can drop these rows without losing too much information.
+          As our story concerns US reviews, we decided to get rid of the reviews made by users not living in the US. 
+          <br></br> 
+          Comes the time to merge the dataframes. We needed to normalize the data because the distributions are different between the two websites. 
+          By following the same procedure as in <a href="https://dlab.epfl.ch/people/west/pub/Lederrey-West_WWW-18.pdf" target="_blank">Lederrey-West paper</a>, thus assuming <quote>that the inherent quality of beers being rated stays roughly constant</quote>,
+          we performed a z-score normalization of the ratings. Then merging <code>BA_US</code> and <code>RB_US</code> dataframes using the <code>concat()</code> of <code>pandas</code> is trivial. 
+          From now on we have a dataframe called <code>df_ratings</code> to work with.	
         </div>
 
         <div class="row">
@@ -216,17 +221,18 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>the data in numbers</h2>
-          <p>Find out Meaningful numbers about reviews. </p>
+          <h2>numbers about the data</h2>
+        </div>
+        <div class="subTitle subTitleOfSection">
+          <h2>Find out Meaningful numbers about the reviews. </h2>
         </div>
 
         <div class="row">
-
           
           <div class="col-lg-4 col-md-6">
             <div class="count-box">
               <i class="bx bxs-quote-alt-right"></i>
-              <span data-purecounter-start="0" data-purecounter-end="9711660" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="9711660" data-purecounter-duration="3" class="purecounter"></span>
               <p>Number of reviews about US beers</p>
             </div>
           </div>
@@ -235,7 +241,7 @@
           <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="bx bxs-user"></i>
-              <span data-purecounter-start="0" data-purecounter-end="47680" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="47680" data-purecounter-duration="3" class="purecounter"></span>
               <p>Number of US users that made reviews </p>
             </div>
           </div>
@@ -243,7 +249,7 @@
           <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="bx bxs-beer"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3464" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="3464" data-purecounter-duration="3" class="purecounter"></span>
               <p>Number of 5 stars beers in the US</p>
             </div>
           </div>
@@ -253,7 +259,7 @@
       </div>
     </section><!-- End Facts Section -->
 
-    <!-- ======= Quotes Example Section ======= -->
+    <!-- ======= Numbers Section ======= -->
     <section id="testimonials" class="testimonials section-bg smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
@@ -302,62 +308,44 @@
           <div class="swiper-pagination"></div>
         </div>
 
-      </div>
-    </section><!-- End Quotes Example Section -->
-
-    <!-- ======= Most Mentioned Section Section ======= -->
-    <section id="nlp" class="about smallerWidthDisplay">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>THE MOST REVIEWED BREWERIES IN THE STATES</h2>
+        <div class="subTitle subTitleOfSection">
+          <h2>Most reviewed breweries of the USA</h2>
         </div>
-
-        <div class="row">
-          <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="normalText" style="font-size: calc(114px/2);"><b>Rogue Ales</b></p>
-            <p class="normalText" style="font-size: calc(94px/2);"><b>Miller Brewing Company</b></p>
-            <p class="normalText" style="font-size: calc(64px/2);"><b>Anheuser-Busch InBev</b></p>
-            <p class="normalText" style="font-size: calc(62px/2);"><b>Brooklyn Brewery</b></p>
-            <p class="normalText" style="font-size: calc(30px/1.5);"><b>Boston Beer Company (Samuel Adams)</b></p>
-          </div>
-          <div class="col-lg-6">
-            <!-- include a reference to the html in the main html file -->
-            <iframe width="450" height="615"src="figures/breweries_reviews.html"></iframe>
-           <!-- <img src="assets/img/top10plc.svg" class="img-fluid img_display" alt="">-->
+        <div style="margin-bottom: 2em;">
+          <div class="row">
+            <div class="col-lg-6 pt-4 pt-lg-0 content">
+              <p class="normalText" style="font-size: calc(104px/2);"><b>Rogue Ales</b></p>
+              <p class="normalText" style="font-size: calc(84px/2);"><b>Miller Brewing Company</b></p>
+              <p class="normalText" style="font-size: calc(64px/2);"><b>Anheuser-Busch InBev</b></p>
+              <p class="normalText" style="font-size: calc(62px/2);"><b>Brooklyn Brewery</b></p>
+              <p class="normalText" style="font-size: calc(30px/1.5);"><b>Boston Beer Company (Samuel Adams)</b></p>
+            </div>
+            <div class="col-lg-6">
+              <iframe width="450" height="615"src="figures/breweries_reviews.html"></iframe>
+            </div>
           </div>
         </div>
 
-        <div class="subTitle">
+        <div class="subTitle subTitleOfSection">
           <h2>Some more data about the number of reviews related to the location</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <iframe width="500" height="415"src="figures/states_reviews_beers.html"></iframe>
-            <!--<img src="assets/img/numberOfQuotesByYear.svg" class="img-fluid img_display" alt="">-->
-          </div>
-          <div class="col-lg-6">
-            <iframe width="500" height="415"src="figures/states_reviews_users.html"></iframe>
-            <!--<img src="assets/img/numberOfQuotes_Tesla.svg" class="img-fluid img_display" alt="">-->
+
+        <div style="margin_top: 2em">
+          <div class="row">
+            <div class="col-lg-6">
+              <iframe width="500" height="415"src="figures/states_reviews_beers.html"></iframe>
+            </div>
+            <div class="col-lg-6">
+              <iframe width="500" height="415"src="figures/states_reviews_users.html"></iframe>
+            </div>
           </div>
         </div>
-
-        <div class="section-title" style="margin-top: 2em;">
-          <p style="text-align: left;">
-            Quotebank consist of a lot of quotes by Elon Musk, and it is not very suprising that Tesla is the company he talks the most about, as he is the CEO.
-            The figure above on the left, shows the distribution of Elon quotes from the year 2015 to 2020.
-            As we can se from the figures there was especially many Elon quotes from the year 2018.
-            This was also, not surprisingly, the year that Elon Musk mentioned Tesla the most, as you can see on the right table.
-            It is this data that we will use in our further analysis of Elon's impact on the financial markets.
-          </p>
-        </div>
-
       </div>
-    </section><!-- End Most Mentioned Section -->
+    </section><!-- End Numbers Section -->
 
     <!-- ======= Sentiment Analysis Section ======= -->
     <section id="sentimentAnalysis" class="about smallerWidthDisplay">
-      <div class="container testimonials" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Sentiment analysis</h2>
@@ -368,361 +356,107 @@
             It uses NLTK because it is simple, easy to deploy, will use up fewer resources, gives dependency parsing, and can be used even for small applications.
             When a sentence is passed into Textblob it gives two outputs, which are polarity and subjectivity. Polarity is the output that lies between [-1,1], where -1 refers to 
             negative sentiment and +1 refers to positive sentiment. Subjectivity is the output that lies within [0,1] and refers to personal opinions and judgments.
-            <!-- Sentiment analysis is a text analysis method that detects polarity (e.g. a positive or negative opinion) within the text. 
-            We did a Sentiment analysis on Elon's quotes using VADER, a model used for text sentiment analysis that is sensitive 
-            to polarity (positive/negative) and intensity (strength) of emotion. The analysis returns a sentiment score that is a 
-            value between -1 and 1, where -1 is very negative, 0 is neutral and 1 is very positive.
-            We used VADER to score Elon's quotes to whether his comments are positive or neutral or negative, 
-            which then can be used to see the effect his comments had on the stock price and the popularity of the mentioned company.  --> 
-          </p>
-        </div>
-
-        <div style="text-align: center; width: 80%; margin: auto; margin-top: 1em; margin-bottom: 3em;">
-          <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-          This too is a great beer! Around Christmas time they release a 3 Litre Bottle! Once bottle is finished you can still bring it into any Stone Brewery and get it refilled!
-          <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-        </div>
-        
-        <p style="margin-top: 1em;">
-          This particular review had a sentiment score of: <b>1.0</b>. 
-          This is expected as they used the words "great" and "Christmas" which are often used as positive words.
-          Also the use of "!" shows that the reviewer is excited about the beer. We can also notice that the quantity
-          of the beer is mentioned in a positive way, as the reviewer is excited about the fact that they can get the beer refilled.
-          Comparing with the garde they gave to the beer, it shows consistancy as the rating is of 5 stars. 
-          Let's investigate the relation between the sentiment score and the rating, to see if there is a correlation.
           </p>
 
-        <div class="row" style="margin-top: -1em;">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <img src="figures/sentiment_distribution.html" class="img-fluid" alt="">
+          <div style="text-align: center; width: 80%; margin: auto; margin-top: 1em; margin-bottom: 3em;">
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              This too is a great beer! Around Christmas time they release a 3 Litre Bottle! Once bottle is finished you can still bring it into any Stone Brewery and get it refilled!
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+          </div>
+
+          <div style="text-align: left;">
+            This particular review had a sentiment score of: <b>1.0</b>. 
+            This is expected as they used the words "great" and "Christmas" which are often used as positive words.
+            Also the use of "!" shows that the reviewer is excited about the beer. We can also notice that the quantity
+            of the beer is mentioned in a positive way, as the reviewer is excited about the fact that they can get the beer refilled.
+            Comparing with the garde they gave to the beer, it shows consistancy as the rating is of 5 stars. 
+            Let's investigate the relation between the sentiment score and the rating, to see if there is a correlation.
+          </div>
+
+          <div class="row" style="margin-top: 0em;">
+            <div class="col-lg-1"></div>
+              <div class="col-lg-10">
+                <iframe width="800" height= "500" src="figures/boxplot_sentiment_rating.html"></iframe>
+              </div>
+            </div>
+          </div>  
+          <div style="text-align: left;margin-bottom: 1em;">
+            In this figure, we observe that the distributions of sentiment scores are concentrated around the median, the maximum and the minimum
+            are quite close to the median. However, rating scores are more spread across the median, with outliers on both sides. From observational analysis only we 
+            can not conclude that there is a correlation between the sentiment score and the rating. We will use a regression analysis to see if there is a correlation as well as 
+            statistical tests such as Pearson's correlation coefficient and Spearman's rank correlation coefficient.
+          </div>
+
+          <div style="text-align: left;margin-bottom: 1em;"> 
+            <h3>Linear Regression</h3>
+            For this linear regression we decided to plot the sentiment score, calculated previously, against the rating. We used the statsmodels library to perform the regression analysis.
+            The results of the regression analysis are shown below for 6 different beers having at leat 1500 reviews (an arbitrary number chosen as the minimum significant number of reviews). 
+            <div style="text-align: center; margin-top: 2em;font-size: large;"> 
+              <p>Sentiment score vs Rating</p>
+            </div>
+              <div style="margin: 0;margin-top: -1.5em;margin-bottom: -1em"> 
+                <div class="row">
+                  <div class="col-lg-6">
+                    <iframe width="700" height="700"src="figures/regression_1.html"></iframe>
+                  </div>
+                  <div class="col-lg-6">
+                    <iframe width="700" height="700"src="figures/regression_2.html"></iframe>
+                  </div>
+                </div>
+              </div>
+            The R-squared values are really low, which means that the sentiment score does not explain the variation in the rating.  
+          </div>
+          <div style="text-align: left;margin-bottom: 1em;"> 
+            <h3>statistical tests</h3>
+            
+            <div style="text-align: center; margin-top: 2em;font-size: large;"> 
+              <p>Sentiment score vs Rating</p>
+            </div>
           </div>
         </div>
-
-        <p style="margin-top: 1em;">
-          In this figure, we observe that the distributions of sentiment scores and ratings are similar.
-          <a href="https://www.tiderpenger.no/" target="_blank">
-          Typically when a stock increases a lot one day, the next day it usually decreases a little bit as some people might sell 
-          due to the increase in price and they want to secure their gain</a>. So the fact that Apple's price dropped a 
-          bit is most likely not because of Elon. This might tell us that Elon does not have that big of an impact on the 
-          stock price of large-cap companies.
-        </p>
-
-        <div class="row" style="margin-top: -2em;">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <img src="assets/img/yfinance_quote1.svg" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div style="margin-top: 4em">
-          <h2>Regression based on sentiment analysis</h2>
-          <p style="text-align: left;">
-            Here we wanted to see if there is a significant effect of Musk's quotes on a company's stock price and popularity. 
-            To achieve this, we plotted the percentage change in stock price or percentage change popularity against the sentiment 
-            score. As a first analysis, for all cases, we observe that the data is dispersed and sparse. Doing a regression on this 
-            type of data is difficult because we don't know which model to use. We decided to model the change of stock price 
-            (or popularity) with a linear model with only one feature. The feature used is the score of the sentiment analysis 
-            for each quote. One can also see that when fitting this model, the R-squared of the model is very low. 
-            This implies that the regression model fits the change of stock (or popularity) very badly. 
-            This means that we cannot say that Elon quotes have an effect. We can state that the Elon quotes cannot describe 
-            the change in stock prices (or popularity). This is normal since we only used one feature. This might be not enough 
-            as there are important variables to take into account when we are talking about stock prices (or popularity). 
-          </p>
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Apple_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Apple_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Ford_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Ford_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Tesla_stock.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6">
-              <img src="assets/img/sensitivity/Tesla_pop.png" class="img-fluid" alt="">
-            </div>
-          </div>
-                    
-        </div>
-
       </div>
     </section><!-- End Sentiment Analysis Section -->
 
     <!-- ======= Beer aspects Section ======= -->
-    <section id="#BeerAspects" class="about smallerWidthDisplay">
+    <section id="BeerAspects" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
-
+      
         <div class="section-title">
           <h2>Beer Aspects</h2>
-        </div>
-
-        <div>
-          <h2>PCA</h2>
-
           <p style="text-align: left;">
-            When reviewing a beer, the reviewer is asked to grade 5 aspects of the beer resulting in a weighted mean as a rating. 
-            These aspects are 'Aroma', 'Taste', 'Palate', 'Appearance' and 'Overall'. None of them are mandatory so we deleted the reviews
-            that did not contain one of these aspects. We then performed a PCA on 4 of the aspects, letting 'overall' out as we are seeking
-            to find the aspects that are the most important in the overall appreciation of the beer. We then plotted the first two components of the PCA.
-
-        <div class="col-lg-6" style="width: 60%; margin: auto; margin-bottom: 2em;">
-          <iframe width="600" height="515"src="figures/corr_matrix.html"></iframe>
-        </div>
-
-          <!--
-            We used <a href="https://pypi.org/project/yfinance/" target="_blank">yfinance<a> a python library that allows you to easily 
-            get information from Yahoo finance, for the financial information in the observational study. 
-            In our case the quoted companies represent the “treated” population of the observational study. 
-            To find a control population, we first select companies that we think are similar to the quoted company 
-            which are not quoted on the same date (and quoted little in general). To perform the matching that will 
-            optimize our model, we decide to introduce covariates for each day that can be observed such as the:
-            <br></br>
-          </p>
-
-          <ul style="text-align: left;">
-            <li>Close, stock price of the company at the end of the day.</li>
-            <li>Volume, how many stock has been exchanged during the day.</li>
-            <li>MarketCap, the value of the company at the end of the day.</li>
-            <li>Popularity, represented by the number of actual search requests made to Google during this day on the company.</li>
-            <li>Money Volume which represents the product of the close and the volume.</li>
-          </ul>
-
-          <p style="text-align: left;">
-            These values are obtained through yahoo finance and google. We also add columns not depending on time: 
-            <br></br>
-          </p>
-
-          <ul style="text-align: left;">
-            <li>Elon: takes value 1 or 0 to indicate if Elon Musk talk about the company.</li>
-            <li>Compare: for the controlled companies, it takes the name of the company we want to compare it with. And for the treated ones, take 'None' as value.</li>
-          </ul>          
-
-          <br></br>
-          <p style="text-align: left;">
-            <b>The following table represents the dataframe obtained and standardized:</b>
-          </p>
-          <br>
-        
-          <div>
-            <table>
-              <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Close</th>
-                <th>Volume</th>
-                <th>MarketCap</th>
-                <th>Popularity</th>
-                <th>Elon</th>
-                <th>Money Volume</th>
-                <th>Propensity score</th>
-              </tr>
-              <tr id="base">
-                <td>Apple</td>
-                <td>2015-02-05</td>
-                <td>-0.077488</td>
-                <td>3.363161</td>
-                <td>-0.020694</td>
-                <td>0.065745</td>
-                <td>1</td>
-                <td>0.013481</td>
-                <td>9.999954e-01</td>
-              </tr>
-              <tr>
-                <td>Microsoft</td>
-                <td>2015-02-05</td>
-                <td>-0.072314</td>
-                <td>0.083692</td>
-                <td>-0.034855</td>
-                <td>-0.147734</td>
-                <td>0</td>
-                <td>-0.059075</td>
-                <td>5.085224e-01</td>
-              </tr>
-              <tr>
-                <td>Dell</td>
-                <td>2015-02-05</td>
-                <td>-0.084971</td>
-                <td>-0.719630</td>
-                <td>-0.058121</td>
-                <td>-0.527252</td>
-                <td>0</td>
-                <td>-0.086382</td>
-                <td>9.863380e-02</td>
-              </tr>
-              <tr>
-                <td>IBM</td>
-                <td>2015-02-05</td>
-                <td>-0.036986</td>
-                <td>-0.646309</td>
-                <td>-0.050319</td>
-                <td>-0.788171</td>
-                <td>0</td>
-                <td>-0.078658</td>
-                <td>1.205988e-07</td>
-              </tr>
-              <tr>
-                <td>Samsung</td>
-                <td>2015-02-05</td>
-                <td>0.041447</td>
-                <td>-0.538745</td>
-                <td>0.074025</td>
-                <td>1.488939</td>
-                <td>0</td>
-                <td>-0.041529</td>
-                <td>3.341405e-08</td>
-              </tr>
-            </table>
+            Reviewers are asked to fill in 5 different grades : 'Aroma', 'Taste', 'Palate', 'Appearance' and 'Overall'. A rating is then done by doing the weighted average 
+            of these 5 aspects. In this section we investigate which aspect in 'Aroma', 'Taste', 'Palate' and ‘Appearance' are the most important for the overall score.               This will give us insights on what aspect reviewers tend to prefer in beers.
+            To do so we will use 2 different methods to be able to cross check our findings. The first method is a PCA or Principal Component Analysis, the second method is a multi-linear regression. 
+              
+          <div style="text-align: left;margin-bottom: 1em;"> 
+            <h3>Princpal Component Analysis</h3>
+            For the PCA, we will use the 4 different aspects as features and ‘overall’ as the target. We use the PCA function from sklearn.decomposition 
+            library with 2 components. After fitting the features the to the PCA we extract the explained variance ratios this gives us the following vector : <b>[0.73276579, 0.12129502]</b>
+            This means the first principal component explains <b>73.3%</b> of the variance and the second <b>12.1%</b>. We finish our PCA analysis by plotting the principal components 1 and 2. 
+              <div class="col-lg-6" style="width: 60%; margin: auto;">
+                <img src="figures/PCA.png" class="img-fluid" alt="">
+              </div>
+            It seems taste is the most important aspect and appearance the least important. There is almost no difference between aroma and palate thus we cannot conclude 
+            much on which one of the two are more important.
           </div>
 
-          <br></br>
-          <p style="text-align: left;">
-            Thanks to these covariates, the propensity score is computed for each company at each given day. 
-            Now, we can compute the matching between the controlled and the treated companies. 
-            To do so, a bipartite graph is constructed with edges between the controlled and treated companies 
-            that we wish to compare, and weights equal to the similarity of these two companies. We solve the 
-            maximum bipartite matching to gain pairs. 
-            <br><br>
-            Here you can see the representation of the graph:
-          </p>
-
-          <div class="col-lg-12" style="width: 60%; margin: auto; margin-bottom: 2em;">
-            <img src="assets/img/graph.png" class="img-fluid" alt="">
+          <div style="text-align: left;"> 
+            <h3>Multilinear Regression</h3>
+            We perform a multilinear regression using the sklearn’s LinearRegression function. We apply fit the data to the regression and in order to evaluate the quality of 
+            our regression we calculate the coefficient of determination : 0.75, this is considered a good value. Thus, our model should be correct. We now simply get the coefficient of the 
+            regression and print the weights we obtain : <b>[0.04819957 0.14019966 0.58786571 0.17108195]</b>
+            These correspond respectively to 'appearance','aroma','taste' and 'palate'. As expected the most important is taste and then followed by palate and aroma and behind is the appearance. 
+            Due to the close weights of palate and aroma, it is hazardous to state that one is more important than the other. In order to push this a little further, we computed a heat map of the correlation between the different variables.
+              <div class="col-lg-6" style="width: 60%; margin: auto;">
+                <iframe width="600" height="515"src="figures/corr_matrix.html"></iframe>
+              </div>
+            As we can see, taste is still the most important and appearance the least however aroma and palate have very similar scores with aroma a bit ahead this time. With this in mind, 
+            the only conclusion we can bring out is the fact that taste is most important and appearance the least important.
           </div>
-            
-          <p style="text-align: left;">
-            The matching is then obtained and we can now go to the next step which 
-            consists of comparing the change of the stock of the treated vs control.
-            <br><br>
           </p>
         </div>
-
-
-        <div style="margin-top: 1em;">
-          <h2>Tests on observational study</h2>
-          <p style="text-align: left;">
-            To do the observational study we had to be careful about a couple of more things. 
-            For example the financial data was sometimes listed in other currencies than USD. 
-            The most prominent is Samsung in Korean Won which is about 1000x of USD. We then had to 
-            convert all monetary features of these types of companies to USD.
-            <br><br>
-
-            This was done manually for the few companies in question, and by taking an estimated average of the 
-            exchange rate over the time period for our data.
-            <br><br>
-
-            We then redid the propensity score for this part and got the coefficients as follows:
-            <br><br>
-
-            <b>Intercept</b> <span id="tab">-1.0469</span><br>
-            <b>Money volume</b> <span id="tab">8.3449</span><br>
-            <b>MarketCap</b> <span id="tab">-2.1203</span><br>
-            <b>Popularity</b> <span id="tab">0.2211</span><br>
-            
-            <br><br>
-            Based on the outputted propensity scores we did the matching for each local group of stocks.
-
-            <br><br>
-            The next part was modeling the stock price change. We loaded in all the stock data for the companies 
-            we have in our model and looked at the 5 consecutive days after a quote for the matched company and the 
-            analysed company. Sometimes a quote will be during a weekend or the following span will include days 
-            without stock history, then our model will automatically just take the days that have stock history. 
-            We then use the stock prices to calculate the daily change (previous day price/next day price).
-            
-            <br><br>
-            By comparing the distributions between a matched and control stock we can test if they have a similar distribution. 
-            We used a Mann-Whitley u test for the distributions. The null-hypothesis is that the distributions are the same. 
-            Here you can see the daily change for the control and 'treated' companies where the x axis is the dates in 
-            chronological order, but not to scale as well as the results for the Mann Whitley U tests:
-          </p>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Apple</h3>
-            <p><b>P-value (IBM)</b> <span id="tab">0.7818969961187895</span></p>
-            <p><b>P-value (Samsung)</b> <span id="tab">0.07267412867689323</span></p>
-            <p><b>P-value (Lenovo)</b> <span id="tab">0.20719648581932448</span></p>
-            <p><b>P-value (Microsoft)</b> <span id="tab">0.9309874465595671</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalApple.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Ford</h3>
-            <p><b>P-value (Renault)</b> <span id="tab">0.037136256414410235</span></p>
-            <p><b>P-value (General Motors)</b> <span id="tab">0.5285921958576796</span></p>
-            <br><br><br>
-            <p>
-              There is two empty figures because Toyota and Stellantis was not matched with ford. 
-              This might have been due to a large market cap and low trading volume.
-            </p>            
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalFord.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>PayPal</h3>
-            <p><b>P-value (Western Union)</b> <span id="tab">0.26275304114766074</span></p>
-            <p><b>P-value (Euronet)</b> <span id="tab">0.48073111045562256</span></p>
-            <p><b>P-value (American Express)</b> <span id="tab">0.9009714934164412</span></p>
-            <p><b>P-value (Visa)</b> <span id="tab">0.534965034965035</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalPayPal.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Tesla</h3>
-            <p><b>P-value (Daimler)</b> <span id="tab">0.22820421433941152</span></p>
-            <p><b>P-value (BMW)</b> <span id="tab">0.01735656673757902</span></p>
-            <p><b>P-value (Volkswagen)</b> <span id="tab">0.46236044154701805</span></p>
-            <p><b>P-value (General Motors)</b> <span id="tab">0.907735912135226</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalTesla.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="row" style="margin-top: 2em;">
-            <h3>Twitter</h3>
-            <p><b>P-value (Google)</b> <span id="tab">0.48484848484848486</span></p>
-            <p><b>P-value (Facebook)</b> <span id="tab">0.5468909935184665</span></p>
-            <p><b>P-value (Snapchat)</b> <span id="tab">0.19477620553450214</span></p>
-            <p><b>P-value (Pinterest)</b> <span id="tab">0.1681531290926782</span></p>
-            <div class="col-lg-12">
-              <img src="assets/img/observational/observationalTwitter.svg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <p style="text-align: left;">
-            <br><br>  
-            There seem to be two tests with a significant result. The P-value in the Ford test with Renault is under 0.05 
-            which means that we can reject that they come from the same distribution. The same applies to Tesla and BMW. 
-            However, it's hard to conclude that Elon's quotes have a significant impact on the 'treated' companies. 
-            That is because not all the hypotheses were rejected, and it can also be the case that different companies' 
-            stocks move in different ways.
-          </p>
-
-        </div>
-
       </div>
-      -->
-    </section><!-- End Observational study Section -->
+    </section><!-- End Beer aspects -->
     
 
     <!-- ======= Impact regression Section ======= -->

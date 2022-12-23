@@ -26,6 +26,14 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
+code {
+  background-color: #eee;
+  color:#111;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -348,8 +356,8 @@ section {
   left: calc(50% - 20px);
 }
 .section-title p {
-  margin-bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # About
@@ -813,6 +821,8 @@ section {
 }
 .testimonials .testimonials-carousel, .testimonials .testimonials-slider {
   overflow: hidden;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 .testimonials .testimonial-item {
   text-align: center;
