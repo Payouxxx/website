@@ -319,7 +319,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>SForeign or Local ?</h2>
+          <h2>Foreign or Local ?</h2>
           <p style="text-align: left;">
             To answer our research question : do Americans give better grades to local beers ? Let's perform some tests.
             In a first step we will divide the dataset in 2 : one composed of American reviews on american beers and another one of American reviews on foreign beers.
@@ -334,12 +334,23 @@
               </div>
             </div>
             Here we plotted the number of reviews per grade for each beer aspect for both datasets: 
-            <li>Blue: Foreign beers</li>
-            <li>Red: Us beers</li>
+            <div style ="margin-left: 1em; text-align: left;" ></div>
+              <li>Blue: Foreign beers</li>
+              <li>Red: Us beers</li>
+            </div>
             It seems that the distrubtions are identical. However, one or more statistical tests are necessary to be sure these distributions comes from the same probability law. 
             It should also be noted that the distributions are approximately Gaussian, so we can use a t_test.
             More precisely we will use 2 different static tests <b>(t-test, Wilcoxon test)</b> and calculate their p-values. If this one is lower than 0.05, then the null hypothesis :
             The 2 samples come from the same distribution, will be rejected. We will conclude that there is a general effect that American beers are differently rated by Americans.
+            <br></br>
+            The <b>Wilcoxon test</b> is a non-parametric statistical test that is used to compare the median of two related or paired samples. 
+            The test is based on the Wilcoxon signed-rank test, which is used to compare the medians of two related samples. The test involves calculating the difference between the pairs of observations 
+            and then ranking the absolute values of these differences. The test statistic is then calculated based on the sum of the ranks of the positive differences.
+            <div style ="margin-left: 1em; text-align: left;" ></div>
+              <h2>T-test</h2>
+                <b>p-value</b> <span id="tab">0.000000</span><br>
+                <b>Pearson's coefficient</b> <span id="tab">0.352315</span><br>
+            </div>
           </p>
         </div>
       </div>
@@ -589,8 +600,38 @@
             is Higher than 60% : Hawaii, Massachusetts, New-York, Rhode Island and Vermont. Now we will try to find if there is a pattern in the reviews of beers based on the political tendencies of the American reviewers. 
             For this we can simply separate the reviews in 2 Dataframes for each party : one with the reviews of local beers and one with the reviews of foreign beers. We then perform linear regression 
             to see if there is a correlation on the rating of local vs foreign beers and the political tendency of the reviewers.
-            Now that all the data is gathered the linear regression can be performed:
-          </p>
+            Now that all the data is gathered the linear regression can be performed for the <b>Blue states (Republicans)</b>.
+          
+            <div style ="margin-left: 1em; text-align: left; margin-bottom: 1em;" >
+              <li>WY p-value:  0.05908908717717479 confidence interval:  [-0.13913697  0.00050374]</li>
+              <li>OK p-value:  0.7247659726982489 confidence interval:  [-0.07528982 -0.01418895]</li>
+              <li>ID p-value:  0.951618871006537 confidence interval:  [-0.07811525 -0.03316912]</li>
+              <li>UT p-value:  0.6231749171668464 confidence interval:  [0.08216246 0.16026653]</li>
+              <li>NE p-value:  0.2111609862100128 confidence interval:  [-0.14643203 -0.0833191 ]</li>
+              <li>AL p-value:  0.037036910800166245 confidence interval:  [-0.08008461 -0.03260173]</li>
+            </div>
+          <div style ="margin-left: 1em; text-align: left;" >
+            The p-values are very high for almost all states but AL. For AL there could be a pattern, looking at the correlation coefficient that is in the bounds of negative confidence intervals, beer ratings in Alabama are more 
+            likely to be a bit higher for local beers (brewed in the US) than for foreign beers (brewed in another country). However the p-value is still very high (p > 0.05) for all other strongly republican states so we cannot say 
+            that there is a pattern for Republican states in general based on this analysis. Moreover there could be unknown cofounders like the price of the beer or the type of beer that could explain the pattern we see in Alabama.
+          </div>
+          <br><br>
+          <div style ="margin-left: 1em; text-align: left;margin-bottom: 1em;" >
+            <li>HI p-value:  0.03618986125294816 confidence interval:  [-0.03887986  0.09044383]]</li>
+            <li>MA p-value:  9.713442706946788e-07 confidence interval:  [0.0613177 0.0834096]</li>
+            <li>NY p-value:  7.311745691626443e-06 confidence interval:  [0.00766482 0.02497248]</li>
+            <li>RI p-value:  0.004618993287231016 confidence interval:  [0.04654619 0.11169225]</li>
+            <li>VT p-value:  0.3485235272459348 confidence interval:  [0.01631276 0.07483121]</li>
+          </div>
+          <div style ="margin-left: 1em; text-align: left;" >
+            Here we see that 2 of the highly democratic states (Massashussetts and New-York) have a p-value lower than 0.05. This means that there could be a pattern in the reviews of beers based on the political tendencies of the American reviewers. 
+            The correlation coefficient is positive for both states which means that this time, the ratings of foreign beers are higher than the ratings of foreign beers. This seems interesting because democrats are more likely to be more open-minded 
+            and open to foreign cultures than republicans that are more conservative. This could explain the pattern we see in the reviews of beers based on the political tendencies of the American reviewers. But there could also be other biases like 
+            the price of the beer, the type of beer or other geographical factors that could explain the pattern we see in in those 2 states. Moreover we don't find this pattern in the other highly democratic states (Hawaii, Rhode Island and Vermont) 
+            so we cannot say that there is a pattern for Democratic states in general based on this analysis.
+          </div>          
+          In the end, based on our preliminary results and the p-values, there don't seem to be a pattern beteen higher local ratings and political tendencies in the US. 
+        </p>
         </div>
       </div>
     </section><!-- End Political Tendencies Section -->
@@ -604,12 +645,13 @@
           <p style="text-align: left;">
             Overall we were not able to search for every things we wanted to do at first sight. Here are some of the limitations 
             we faced that restricted us from doing more in the amount of time we had.</br>
-            <ul>
+            <div style ="margin-left: 1em; text-align: left;" >
               <li>Consumption: one of the main aspect of our research is that the dataset contained only reviews, no consumption information.
                   Even though we searched external datasets about this, we were not able to find a reliable one.</li>
               <li>Time: we were not able to do a lot of things we wanted to do because of the time we had. A part of this point is 
                   that we have not made a lot of researches before the 2nd Milestone and we had to make up for it later.</li>
-              <li>Bias: natural data are often full of bias </li>
+
+            </div>
           </p>
           <br>
          </div>
