@@ -50,12 +50,13 @@
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#Beer" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bxs-megaphone"></i> <span>Introduction</span></a></li>
-        <li><a href="#data" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Dataset</span></a></li>
+        <li><a href="#intro" class="nav-link scrollto"><i class="bx bxs-megaphone"></i> <span>Introduction</span></a></li>
+        <li><a href="#dataset" class="nav-link scrollto"><i class="bx bx-data"></i> <span>Dataset</span></a></li>
+        <li><a href="#facts" class= "nav-link scrollto"><i class="bx bx-bar-chart"></i><span>Numbers</span></a></li>
         <li><a href="#sentimentAnalysis" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Sentiment Analysis</span></a></li>
-        <li><a href="#BeerAspects" class="nav-link scrollto"><i class="bx bx-search"></i> <span>Observational Study</span></a></li>
-        <li><a href="#impactRegression" class="nav-link scrollto"><i class="bx bx-line-chart"></i> <span>Impact regression</span></a></li>
-        <li><a href="#conclusion" class="nav-link scrollto"><i class="bx bx-bulb"></i> <span>Conclusion</span></a></li>
+        <li><a href="#beerAspects" class="nav-link scrollto"><i class="bx bx-search"></i> <span>Beer Aspects</span></a></li>
+        <li><a href="#politicalTendencies" class="nav-link scrollto"><i class="bx bx-map-pin"></i> <span>Political Tendencies</span></a></li>
+        <li><a href="#limitations" class="nav-link scrollto"><i class="bx bx-map-pin"></i> <span>Limitations</span></a></li>        <li><a href="#conclusion" class="nav-link scrollto"><i class="bx bx-bulb"></i> <span>Conclusion</span></a></li>
         <li><a href="#links" class="nav-link scrollto"><i class="bx bx-link"></i> <span>Links</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -82,12 +83,12 @@
           Press the logo <i class="bx bxs-left-top-arrow-circle" style="font-size: 20px; margin-top: 10px;"></i>
         </div>
     </div>
-  </section><!-- End Beer -->
+  </section><!-- End Beer Section -->
 
   <main id="main">
 
     <!-- ======= Introduction Section ======= -->
-    <section id="about" class="about smallerWidthDisplay">
+    <section id="intro" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -116,17 +117,6 @@
                 and won’t necessarily be representative of all beer drinkers. It's always important to know the bias you are working with. 
               </div>
             </div>
-
-            <!-- <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
-              
-              <div style="width: 60%; text-align: right; margin-right: 2em;">
-                <h3></h3>
-                
-              </div>
-              <div style="width: 40%;">
-                <img src="assets/img/intro/tweet.jpg" class="img-fluid" alt="">
-              </div>
-            </div> -->
           </p>
         </div>
 
@@ -134,10 +124,6 @@
 
         <div class="row">
           <h3 style="text-align: left; margin-bottom: 1em;">Research questions</h3>
-          <!-- <div class="col-lg-4">
-            <img src="assets/img/intro/profile-img.jpg" class="img-fluid" alt="">
-          </div> -->
-          <!-- <div class="col-lg-8 pt-4 pt-lg-0"> -->
           <div class="questions">
             <p>
               <b>Do American reviwers give better grades to local beers?</b>
@@ -156,8 +142,8 @@
       </div>
     </section><!-- End Introduction Section -->
 
-    <!-- ======= Dataset ======= -->
-    <section id="Dataset" class="about smallerWidthDisplay">
+    <!-- ======= Dataset Section ======= -->
+    <section id="dataset" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -174,14 +160,13 @@
             The will alow us to analyse how beer reviews influence the perception of a beer. For example, a comparison of ratings and reviews of a particular beer can be used to determine whether users in different regions have different opinions about the same beer.
             Additionally, the datasets can be used to examine how factors such as age, gender, and location affect user opinion.
             Information can be drawn to determine the different types of beers popular in different regions. 
-              
             </p>
         </div>
         <div style="text-align: left;margin-bottom: 1em;"> 
           <h3>Pre-processing</h3>
-          For both datasets, we added two columns that corresponds to the country of the user and the country of the brewery. The geographical information contain the name of the country for users and breweries. 
-          However, for the US based locations, we also have the name of the state. We want to extract this information and add it to the dataframe. To do so we create an extra column for both breweries and users 
-          that will contain the US postal abbreviations for each state. We then finished processing the locations by dropping the state name in the location column. By quickly giving a look at the repartition
+          For both datasets, we have geographical information about the country of users and breweries. 
+          Moreover, for the US based locations, we also have the name of the state. We extracted this information and createed an extra column for both breweries and users 
+          containing the US postal abbreviations for each state. We then finished processing the locations by dropping the state name in the location column. By quickly giving a look at the repartition
           of the users location. Some US territories have 1 review each. We therefore removed them from the dataframe since they will not be useful for our analysis.
           We end up with 2 dataframes named <code>BA_US</code> and <code>RB_US</code>. 
           We also converted the <b rating></b> column to a <code>datetime object</code>.
@@ -196,25 +181,18 @@
           we performed a z-score normalization of the ratings. Then merging <code>BA_US</code> and <code>RB_US</code> dataframes using the <code>concat()</code> of <code>pandas</code> is trivial. 
           From now on we have a dataframe called <code>df_ratings</code> to work with.	
         </div>
-
-        <div class="row">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <img src="assets/img/figure1.svg" class="img-fluid" alt="">
-          </div>
-        </div>
       </div>
     </section><!-- End Dataset Section -->
 
     <!-- ======= Facts Section ======= -->
-    <section id="data" class="facts">
+    <section id="facts" class="facts">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>numbers about the data</h2>
         </div>
         <div class="subTitle subTitleOfSection">
-          <h2>Find out Meaningful numbers about the reviews. </h2>
+          <h2>Find out Meaningful numbers about the reviews</h2>
         </div>
 
         <div class="row">
@@ -245,17 +223,12 @@
           </div>
 
         </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Numbers Section ======= -->
-    <section id="testimonials" class="testimonials section-bg smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
+      <div style="margin-bottom: 2em;"></div>
 
-        <div class="subTitle subTitleOfSection">
-          <h2>Extract of the reviews</h2>
-        </div>
+      <div class="subTitle subTitleOfSection">
+        <h2>Extract of the reviews</h2>
+      </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
@@ -297,10 +270,12 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
+        <div style="margin-bottom: 4em;"></div>
+      </div> 
 
-        <div class="subTitle subTitleOfSection">
-          <h2>Most reviewed breweries of the USA</h2>
-        </div>
+      <div class="subTitle subTitleOfSection">
+        <h2>Most reviewed breweries of the USA</h2>
+      </div>
         <div style="margin-bottom: 2em; text-align: left;">
           <div class="row">
             <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -318,10 +293,9 @@
           but also craft breweries such as <b>Rogue Ales</b> and <b>Brooklyn Brewery</b>.
         </div>
 
-        <div class="subTitle subTitleOfSection">
-          <h2>Some more data about the number of reviews related to the location</h2>
-        </div>
-
+      <div class="subTitle subTitleOfSection">
+        <h2>Some more data about the number of reviews related to the location</h2>
+      </div>
         <div style="text-align:left; margin-top;: 2em">
           <div class="row">
             <div class="col-lg-6">
@@ -336,7 +310,6 @@
           they are the states with the highest population. Nonethless, these are valuable insights strenghtening our research question about a possible link between the 
           location of the user and the location of the beer reviewed
         </div>
-      </div>
     </section><!-- End Numbers Section -->
 
     <!-- ======= Sentiment Analysis Section ======= -->
@@ -346,6 +319,7 @@
         <div class="section-title">
           <h2>Sentiment analysis</h2>
           <p style="text-align: left;">
+            First of all we will investigate if the reviews made by users are positive or negative and if they correspond to the grade given by the user (Rating).
             Sentiment analysis is a method using Natural Language Processing, text analysis and other algorithms to identify, extract, quantify and 
             study the polarity of subjective information in a given text (e.g. a positive or negative opinion). Performing a Sentiment analysis 
             on beer reviews will allow us to see if the reviews tend to be positive or negative. We will use the TextBlob library that uses a natural language toolkit (NLTK). 
@@ -386,24 +360,26 @@
           <div style="text-align: left;margin-bottom: 1em;"> 
             <h3>Linear Regression</h3>
             For this linear regression we decided to plot the sentiment score, calculated previously, against the rating. We used the statsmodels library to perform the regression analysis.
-            The results of the regression analysis are shown below for 6 different beers having at leat 1500 reviews (an arbitrary number chosen as the minimum significant number of reviews). 
+            The results of the regression analysis are shown below for 6 different beers having at leat 500 reviews (an arbitrary number chosen as the minimum significant number of reviews).
+            In the first column we chose 3 beers amongst the top 10 most reviewed beers while in the second column we chose 3 beers with much less reviews and coming from different countries.
             <div style="text-align: center; margin-top: 2em;font-size: large;"> 
               <p>Sentiment score vs Rating</p>
             </div>
-              <div style="margin: 0;margin-top: -1.5em;margin-bottom: -1em"> 
-                <div class="row">
-                  <div class="col-lg-6">
-                    <iframe width="700" height="700"src="figures/regression_1.html"></iframe>
-                  </div>
-                  <div class="col-lg-6">
-                    <iframe width="700" height="700"src="figures/regression_2.html"></iframe>
-                  </div>
+            <div style="margin: 0;margin-top: -1.5em;margin-bottom: -1em"> 
+              <div class="row">
+                <div class="col-lg-6">
+                  <iframe width="700" height="700"src="figures/regression_1.html"></iframe>
                 </div>
+                <div class="col-lg-6">
+                  <iframe width="700" height="700"src="figures/regression_2.html"></iframe>
+                 </div>
               </div>
-            The R-squared values are really low, which means that the sentiment score does not explain the variation in the rating.  
+            </div>
+            The R-squared values are really low, which means that the sentiment score does not explain the variation in the rating. The more the reviews the worse the regression
+            model fits the data.
           </div>
           <div style="text-align: left;margin-bottom: 1em;"> 
-            <h3>statistical tests</h3>
+            <h3>Statistical tests</h3>
             <div style="text-align: left; margin-top: 2em;font-size: large;"> 
               Using the <code>pearsonr</code> function from the <code>scipy.stats</code> library, we can calculate the Pearson's correlation coefficient and the p-value
               for the sentiment score and the rating. 
@@ -425,13 +401,44 @@
               It represents a medium association between the sentiment score and the rating. A positive coefficient indicates that as the rating increases,
               the sentiment score also increases, even if it's a moderate effect.
 
+              <div style="text-align: left;margin-bottom: 1em;margin-top: 1em;"> 
+                <h3>And what about local beers ?</h3>
+                <div style="text-align: left; margin-top: 2em;font-size: large;"> 
+                  To validate (or invalidate) our hypothesis that users from on state prefer beers brewed in the same state, let's perform the same 
+                  linear regression than before to see if the sentiment score is more related to the rating as we expect users to be more positive in their reviews.
+                </div>
+                <div style="text-align: left; margin-top: 2em;font-size: large;"> 
+                  <p>Sentiment score vs Rating</p>
+                </div>
+                <div style="display: flex; margin: auto; width: 85%; margin-bottom: 2em; margin-top: -1em;">
+                  <div style="width: 50%;height:80% ;margin-top: 0em;">
+                    <iframe width="700" height="700"src="figures/regression_local.html"></iframe>
+                  </div>
+                  <div style="width: 80%; text-align: left; margin-left: 0em;margin-top: 5em;">
+                    The first remark we can make is that the total number of reviews is much lower than the previous regression. This is due to the fact that we only kept the reviews
+                    from users from the same state as the brewery. The second remark is that the R-squared value are still very low, 
+                    meaning that the linear regressions do not fit the data. 
+                    <br></br>
+                    Performing the same two tests as before, on every review made by a user on a local beer (relative to its state), we obtain correlation coefficients
+                    in the same range as before. The p-value of the Pearson's correlation test is still very low, meaning that there is a correlation between the sentiment score and the rating.
+                    <br></br>
+                    <b>p-value</b> <span id="tab">0.000000</span><br>
+                    <b>Pearson's coefficient</b> <span id="tab">0.367722</span><br>
+                    <b>Spearman's coefficient</b> <span id="tab">0.351841</span><br>
+                    <br></br>     
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section><!-- End Sentiment Analysis Section -->
 
     <!-- ======= Beer aspects Section ======= -->
-    <section id="BeerAspects" class="about smallerWidthDisplay">
+
+    <!-- ======= Beer aspects Section ======= -->
+    <section id="beerAspects" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
       
         <div class="section-title">
@@ -444,10 +451,16 @@
           <div style="text-align: left;margin-bottom: 1em;"> 
             <h3>Princpal Component Analysis</h3>
             For the PCA, we will use the 4 different aspects as features and ‘overall’ as the target. We use the PCA function from sklearn.decomposition 
-            library with 2 components. After fitting the features the to the PCA we extract the explained variance ratios this gives us the following vector : <b>[0.73276579, 0.12129502]</b>
+            library with 2 components. After fitting the features the to the PCA we extract the explained variance ratios this gives us the following vector : 
+            <br>
+            <div style="text-align: center; width: 80%; margin: auto; margin-top: 1em; margin-bottom: 3em;">
+              <i class="bx bxs-chevron-left"></i>
+              <b>0.73276579, 0.12129502</b>
+              <i class="bx bxs-chevron-right"></i>
+            </div>
             This means the first principal component explains <b>73.3%</b> of the variance and the second <b>12.1%</b>. We finish our PCA analysis by plotting the principal components 1 and 2. 
-              <div class="col-lg-6" style="width: 60%; margin: auto;">
-                <img src="figures/PCA.png" class="img-fluid" alt="">
+              <div class="col-lg-6" style="width: 100%; margin-top: 1em; margin-bottom: -7em; align-content: center;">
+                <iframe width="600" height="300" src="figures/PCA.html"></iframe>
               </div>
             It seems taste is the most important aspect and appearance the least important. There is almost no difference between aroma and palate thus we cannot conclude 
             much on which one of the two are more important.
@@ -457,7 +470,12 @@
             <h3>Multilinear Regression</h3>
             We perform a multilinear regression using the sklearn’s LinearRegression function. We apply fit the data to the regression and in order to evaluate the quality of 
             our regression we calculate the coefficient of determination : 0.75, this is considered a good value. Thus, our model should be correct. We now simply get the coefficient of the 
-            regression and print the weights we obtain : <b>[0.04819957 0.14019966 0.58786571 0.17108195]</b>
+            regression and print the weights we obtain : 
+            <div style="text-align: center; width: 80%; margin: auto; margin-top: 1em; margin-bottom: 3em;">
+              <i class="bx bxs-chevron-left"></i>
+              <b>0.04819957 0.14019966 0.58786571 0.17108195</b>
+              <i class="bx bxs-chevron-right"></i>
+            </div>
             These correspond respectively to 'appearance','aroma','taste' and 'palate'. As expected the most important is taste and then followed by palate and aroma and behind is the appearance. 
             Due to the close weights of palate and aroma, it is hazardous to state that one is more important than the other. In order to push this a little further, we computed a heat map of the correlation between the different variables.
               <div class="col-lg-6" style="width: 60%; margin: auto;">
@@ -465,26 +483,42 @@
               </div>
             As we can see, taste is still the most important and appearance the least however aroma and palate have very similar scores with aroma a bit ahead this time. With this in mind, 
             the only conclusion we can bring out is the fact that taste is most important and appearance the least important.
+            Our followup question after finding out that taste is the most important aspect and appearance the least important, is whether there are notable changes for beers with strong taste and beers with mild taste. 
+            To do so we chose four beer styles, Pale Lager and American Adjunct Lager as beers with mild taste and Stout and India Pale Ale (IPA) as beers with strong taste.
+            We then inspect their scores and plot a heat map of the correlation matrix for each beer style.            
           </div>
+            <div style="text-align:left; margin-top;: 2em">
+              <div class="row">
+                <div class="col-lg-6">
+                  <iframe width="500" height="415"src="figures/corr_metrics_AALager.html"></iframe>
+                </div>
+                <div class="col-lg-6">
+                  <iframe width="500" height="415"src="figures/corr_metrics_PL.html"></iframe>
+                </div>
+                <div class="col-lg-6">
+                  <iframe width="500" height="415"src="figures/corr_metrics_IPA.html"></iframe>
+                </div>
+                <div class="col-lg-6">
+                  <iframe width="500" height="415"src="figures/corr_metrics_STOUT.html"></iframe>
+                </div>
+            </div>
+            We see that the two strong beer styles have better grades compared to the two beer styles with a lighter taste. We also see, from the correlation matrices, 
+            that the results from our previous correlation matrix are quite similar : taste the most important and appearance the least. Taste tends to be slightly more important for the two lighter beer styles.
           </p>
         </div>
       </div>
     </section><!-- End Beer aspects -->
     
 
-    <!-- ======= Impact regression Section ======= -->
-    <section id="impactRegression" class="about smallerWidthDisplay">
+    <!-- ======= Political Tendencies Section ======= -->
+    <section id="politicalTendencies" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Impact regression</h2>
-          <p style="text-align: left;">
-            The aim of this part is to perform a linear regression on the change of stock to . Indeed, a simple linear regression was 
-            calculated to describe the change of stock at a given day based on the market cap, the money volume, whether or not 
-            Elon Musk has talked about the company, and especially the sentiment analysis of the quote.  
-            We want to investigate the degree to which the variable sentiment score predicts the change of stock price.
-            <br><br>
-
+          <h2>Political Tendencies</h2>
+          <p style="text-align: left;">          
+            In order to study the links between the political tendencies of each state and the reviews made by users from the same states,
+            we first need to gather the political results of each state. We found a dataset on Kaggle that contains the political
             To do so, we continue to use the data frame of the observational study but we need to make some modifications. 
             In the beginning, we add a column of sentiment score for each quote, and for the companies not quoted we set the 
             score to 0. Afterward, we noticed that there are many quotes on the same day, some of them are different quotes and 
@@ -499,12 +533,12 @@
 
             Now that all the data is gathered the linear regression can be performed:
           </p>
-
+<!-- 
           <br><br>
           
           <div class="col-lg-12">
             <img src="assets/img/linReg.png" class="img-fluid" alt="">
-          </div>
+          </div> 
 
           <p style="text-align: left;">
             <br><br>
@@ -514,37 +548,26 @@
             low. The coefficients represent the rate of change of the stock price with respect to the variables. 
             This means Elon quotes still don't have an impact on the change of stock price, even when we expanded the model. 
           </p>
-
+-->
         </div>
       </div>
-    </section><!-- End Impact regression Section -->
+    </section><!-- End Political Tendencies Section -->
 
-    <!-- ======= Impact regression Section ======= -->
-    <section id="conclusion" class="about smallerWidthDisplay">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Conclusion</h2>
-          <p style="text-align: left;">
-            In light of the above, we did not see that Elon had a significant impact on the stock prices. In fact, we conducted two analyses to check if Elon's quotes have an impact on the stock prices by constructing an observational study  and to represent the impact of the quotes on the change of the stock price, by performing a linear regression. 
-            <br><br>
-            As stated in our research questions we wanted to test if his impact (if he had any) was different for big and small companies. However, the quotes about smaller companies are not enough to make an analysis of his impact on them.  One can think before this study that his impact would be significant on larger companies, except maybe Tesla, where he has an important role and therefore probably a direct impact. Interestingly enough, Tesla is also the company that had the most significant result in the Mann-Whitley U test. One can also take into consideration that Elon Musk usually uses Twitter when he utters an opinion about different companies. Unfortunately, Quote Bank does not take into account the tweets, as said at the beginning. 
-            <br><br>
-            However, the following study proves that when taking the covariates that we defined, Elon quotes don't have an impact on the stock price regardless of the sentiment score of the quote.
-          </p>
-        </div>
-
-      </div>
-    </section><!-- End Impact regression Section -->
-
-    <!-- ======= Impact regression Section ======= -->
+    <!-- ======= Future Work Section ======= -->
     <section id="futureWork" class="about smallerWidthDisplay">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Future work</h2>
+          <h2>Limitations and Future work</h2>
           <p style="text-align: left;">
-            There were things that we were not able to do, due to time limits as well as other reasons, such as some limitations with Quotebank. But there are still a lot of interesting things that we could have looked at. We will list some of the stuff we think that could be interesting to look at in the future.
+            Overall we were not able to search for every things we wanted to do at first sight. Here are some of the limitations 
+            we faced that restricted us from doing more in the amount of time we had.</br>
+            <ul>
+              <li>Consumption: one of the main aspect of our research is that the dataset contained only reviews, no consumption information.
+                  Even though we searched external datasets about this, we were not able to find a reliable one.</li>
+              <li>Time: we were not able to do a lot of things we wanted to do because of the time we had. A part of this point is 
+                  that we have not made a lot of researches before the 2nd Milestone and we had to make up for it later.</li>
+              <li>Bias: natural data are often full of bias </li>
           </p>
           <br>
           <p style="text-align: left;">
@@ -569,9 +592,27 @@
           </p>
           <br>
         </div>
+      </div>
+    </section><!-- End Future Work Section -->
+
+
+    <!-- ======= Conclusion Section ======= -->
+    <section id="conclusion" class="about smallerWidthDisplay">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Conclusion</h2>
+          <p style="text-align: left;">
+            In light of the above, we did not see that Elon had a significant impact on the stock prices. In fact, we conducted two analyses to check if Elon's quotes have an impact on the stock prices by constructing an observational study  and to represent the impact of the quotes on the change of the stock price, by performing a linear regression. 
+            <br><br>
+            As stated in our research questions we wanted to test if his impact (if he had any) was different for big and small companies. However, the quotes about smaller companies are not enough to make an analysis of his impact on them.  One can think before this study that his impact would be significant on larger companies, except maybe Tesla, where he has an important role and therefore probably a direct impact. Interestingly enough, Tesla is also the company that had the most significant result in the Mann-Whitley U test. One can also take into consideration that Elon Musk usually uses Twitter when he utters an opinion about different companies. Unfortunately, Quote Bank does not take into account the tweets, as said at the beginning. 
+            <br><br>
+            However, the following study proves that when taking the covariates that we defined, Elon quotes don't have an impact on the stock price regardless of the sentiment score of the quote.
+          </p>
+        </div>
 
       </div>
-    </section><!-- End Impact regression Section -->
+    </section><!-- Conclusion Section -->
 
     <!-- ======= Usefull Links Section ======= -->
     <section id="links" class="services smallerWidthDisplay">
@@ -591,7 +632,7 @@
                 </svg>
                 <i class="bx bx-code"></i>
               </div>
-              <h4><a href="https://github.com/epfl-ada/ada-2021-project-madagascar" target="_blank">Our Jupyter Notebook</a></h4>
+              <h4><a href="https://github.com/epfl-ada/ada-2022-project-datalcoholic" target="_blank">Our Jupyter Notebook</a></h4>
               <p>This link takes you to our Jupyter Notebook</p>
             </div>
           </div>
@@ -604,7 +645,7 @@
                 </svg>
                 <i class="bx bx-globe"></i>
               </div>
-              <h4><a href="https://dlab.epfl.ch/teaching/fall2021/cs401/" target="_blank">Course webpage</a></h4>
+              <h4><a href="https://dlab.epfl.ch/teaching/fall2022/cs401/" target="_blank">Course webpage</a></h4>
               <p>This link takes you directly to the course webpage</p>
             </div>
           </div>
