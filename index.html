@@ -110,28 +110,23 @@
               </div>
               <div style="width: 80%; text-align: left; margin-left: 1em;">
                 <h3>Reviews in the States</h3>
-                Taking a closer look to the dataset we observe that there is a total of 5 277 breweries. However they do not seem to be the largest ones in the US.
-                The largest brewery in the US is <a href="https://www.brewersassociation.org/statistics/breweries/" target="_blank">Anheuser-Busch InBev</a> for instance and  
-                we observe that only <b>1.73%</b> of the reviews are made from beers coming out of their breweries. It seems that the dataset gathers more reviews about the craft brew beers 
+                Taking a closer look to the dataset we observe that there is a total of 5277 breweries. However they do not seem to be the largest ones in the US.
+                The 2nd largest brewery in the US in 2021 was <a href="https://www.brewersassociation.org/press-releases/brewers-association-releases-annual-craft-brewing-industry-production-report-and-top-50-producing-craft-brewing-companies-for-2021/" target="_blank">MolsonCoors</a> for instance and  
+                we observe that only <b>0.26%</b> of the reviews are made from beers coming out of their breweries. It seems that the dataset gathers more reviews about craft brewed beers 
                 and won’t necessarily be representative of all beer drinkers. It's always important to know the bias you are working with. 
               </div>
             </div>
 
-            <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
+            <!-- <div style="display: flex; margin: auto; width: 80%; margin-bottom: 2em; margin-top: 3em;">
               
               <div style="width: 60%; text-align: right; margin-right: 2em;">
-                <h3>Elon talks, crypto follows</h3>
-                Another example of a Elon tweet was in may, when Musk tweeted that Tesla will stop accepting Bitcoin as a method of payment. Shortly after <a href="https://www.vox.com/recode/2021/5/18/22441831/elon-musk-bitcoin-dogecoin-crypto-prices-tesla" target="_blank">the bitcoin price
-                dropped by 15%.</a> A coincidence?
-                Although quotebank does not contain tweets, it is these types of statements that we will take a closer look at, and try to find out whether they impact the stock price,
-                throughout this data story.              
-                We will look at how Elon Musk's quotes impact the financial markets as well as the popularity of different companies.
-                Is there an Elon Effect?   
+                <h3></h3>
+                
               </div>
               <div style="width: 40%;">
                 <img src="assets/img/intro/tweet.jpg" class="img-fluid" alt="">
               </div>
-            </div>
+            </div> -->
           </p>
         </div>
 
@@ -139,30 +134,25 @@
 
         <div class="row">
           <h3 style="text-align: left; margin-bottom: 1em;">Research questions</h3>
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <img src="assets/img/intro/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0">
-
-            <div class="questions">
-              <p>
-                <b>Do American reviwers give better grades to local beers?</b>
-                <br><span style="margin-left: 2em">Are some states more represented than others in term of number of reviews ?
-                <br><span style="margin-left: 2em">Which part of the grading system is the most important?
-                <br><span style="margin-left: 2em">Are reviews more explicits when people liked the beer?
-              </p>
-              <p>
-                <b>Overall, are the reviews more positive or negative? </b>
-              </p>
-              <p>
-                <b>How politics tendencies are spread within USA ?  </b>
-                <br><span style="margin-left: 2em"> Can we observe trends in beer consumption related to the political tendencies ?
-                <br><span style="margin-left: 2em"> Is there a trend over time ?
-              </p>
-            </div>
+          </div> -->
+          <!-- <div class="col-lg-8 pt-4 pt-lg-0"> -->
+          <div class="questions">
+            <p>
+              <b>Do American reviwers give better grades to local beers?</b>
+              <br><span style="margin-left: 2em">Are some states more represented than others in term of number of reviews ?
+              <br><span style="margin-left: 2em">Which part of the grading system is the most important?
+              <br><span style="margin-left: 2em">Are reviews more explicits when people liked the beer?
+            </p>
+            <p>
+              <b>How politics tendencies are spread within USA ?  </b>
+              <br><span style="margin-left: 2em"> Can we observe a correlation between beer reviews and political tendencies ?
+              <br><span style="margin-left: 2em"> Is there a trend over time ?
+            </p>
+           </div>
           </div>
         </div>
-
       </div>
     </section><!-- End Introduction Section -->
 
@@ -228,7 +218,7 @@
         </div>
 
         <div class="row">
-          
+
           <div class="col-lg-4 col-md-6">
             <div class="count-box">
               <i class="bx bxs-quote-alt-right"></i>
@@ -311,7 +301,7 @@
         <div class="subTitle subTitleOfSection">
           <h2>Most reviewed breweries of the USA</h2>
         </div>
-        <div style="margin-bottom: 2em;">
+        <div style="margin-bottom: 2em; text-align: left;">
           <div class="row">
             <div class="col-lg-6 pt-4 pt-lg-0 content">
               <p class="normalText" style="font-size: calc(104px/2);"><b>Rogue Ales</b></p>
@@ -324,13 +314,15 @@
               <iframe width="450" height="615"src="figures/breweries_reviews.html"></iframe>
             </div>
           </div>
+          Amongst the top 5 breweries present in the dataframe, we find some wll-known companies such as <b>Anheuser-Busch InBev</b>, 
+          but also craft breweries such as <b>Rogue Ales</b> and <b>Brooklyn Brewery</b>.
         </div>
 
         <div class="subTitle subTitleOfSection">
           <h2>Some more data about the number of reviews related to the location</h2>
         </div>
 
-        <div style="margin_top: 2em">
+        <div style="text-align:left; margin-top;: 2em">
           <div class="row">
             <div class="col-lg-6">
               <iframe width="500" height="415"src="figures/states_reviews_beers.html"></iframe>
@@ -339,6 +331,10 @@
               <iframe width="500" height="415"src="figures/states_reviews_users.html"></iframe>
             </div>
           </div>
+          Comparing the number of reviews made by users from one state, to the number of reviews made about beers from that state, we can see that within the top 10
+          of both distributions we find the states of California, Washington, Pensilvania, New York and Massachusetts. Some of them are not surprising as
+          they are the states with the highest population. Nonethless, these are valuable insights strenghtening our research question about a possible link between the 
+          location of the user and the location of the beer reviewed
         </div>
       </div>
     </section><!-- End Numbers Section -->
@@ -408,10 +404,27 @@
           </div>
           <div style="text-align: left;margin-bottom: 1em;"> 
             <h3>statistical tests</h3>
-            
-            <div style="text-align: center; margin-top: 2em;font-size: large;"> 
-              <p>Sentiment score vs Rating</p>
-            </div>
+            <div style="text-align: left; margin-top: 2em;font-size: large;"> 
+              Using the <code>pearsonr</code> function from the <code>scipy.stats</code> library, we can calculate the Pearson's correlation coefficient and the p-value
+              for the sentiment score and the rating. 
+              <br></br>
+              <b>p-value</b> <span id="tab">0.000000</span><br>
+              <b>Pearson's coefficient</b> <span id="tab">0.352315</span><br>
+              <br></br>
+              The p-value is very low, meaning that there is a correlation between the sentiment score and the rating. Which is nuanced
+              by the Pearson's coefficient which positive and close to 0.35, therefore the correlation is moderate. The Pearson's correlation test
+              assumes that the data is normally distributed, which is not the case here, and a linear relationship betweem the variables. 
+              <br></br>
+              The assumptions of the Spearman correlation are that data must be ordinal (we can tell without doubt if a value is lower or higher than another).
+              We are testing if the data are monotically related (the size of one variable increases as the other variables also increases, 
+              or where the size of one variable increases as the other variable also decreases).
+              <br></br>
+              <b>Spearman's coefficient</b> <span id="tab">0.334857</span><br>
+              <br></br>
+              We obtained a Spearman coefficient of 0.33, which is close to the Pearson's coefficient. 
+              It represents a medium association between the sentiment score and the rating. A positive coefficient indicates that as the rating increases,
+              the sentiment score also increases, even if it's a moderate effect.
+
           </div>
         </div>
       </div>
